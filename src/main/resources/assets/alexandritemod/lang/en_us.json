@@ -1,0 +1,31 @@
+{
+
+  "item.alexandritemod.alexandrite": "Alexandrite Gem",
+  "item.alexandritemod.raw_alexandrite": "Raw Alexandrite",
+  "item.alexandritemod.chisel": "Chisel",
+
+  "block.alexandritemod.alexandrite_block": "Block of Alexandrite",
+  "block.alexandritemod.raw_alexandrite_block": "Block of Raw Alexandrite",
+  "block.alexandritemod.alexandrite_ore": "Alexandrite Ore",
+  "block.alexandritemod.alexandrite_deepslate_ore": "Deepslate Alexandrite Ore",
+  "block.alexandritemod.magic_block": "Concrete Converter",
+
+  "creativetab.alexandritemod.alexandrite_items": "Alexandrite Additions",
+
+  "tooltip.alexandritemod.chisel.shift_down": "Converts Blocks to Brick Form",
+  "tooltip.alexandritemod.chisel": "Press §eShift§r for more Information",
+  "tooltip.alexandritemod.magic_block.tooltip": "Converts Concrete Powder to Concrete",
+
+  "block.alexandritemod.alexandrite_stairs": "Alexandrite Stairs",
+  "block.alexandritemod.alexandrite_slab": "Alexandrite Slab",
+
+  "block.alexandritemod.alexandrite_button": "Alexandrite Button",
+  "block.alexandritemod.alexandrite_pressure_plate": "Alexandrite Pressure Plate",
+
+  "block.alexandritemod.alexandrite_fence": "Alexandrite Fence",
+  "block.alexandritemod.alexandrite_fence_gate": "Alexandrite Fence Gate",
+  "block.alexandritemod.alexandrite_wall": "Alexandrite Wall",
+
+  "block.alexandritemod.alexandrite_door": "Alexandrite Door",
+  "block.alexandritemod.alexandrite_trapdoor": "Alexandrite Trapdoor"
+}
