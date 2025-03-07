@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.justin.alexandritemod.block.ModBlocks;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
 import net.justin.alexandritemod.item.ModItems;
+import net.justin.alexandritemod.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -39,6 +40,8 @@ public class AlexandriteMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModSounds.register(modEventBus);
 
 
 

@@ -50,6 +50,8 @@ public class ModItems {
     public static final RegistryObject<Item> ALEXANDRITE_HAMMER = ITEMS.register("alexandrite_hammer",
             () -> new HammerItem(ModToolTiers.ALEXANDRITE, new Item.Properties()
                     .attributes(PickaxeItem.createAttributes(ModToolTiers.ALEXANDRITE, 7, -3.5f))));
+    public static final RegistryObject<Item> TOOL_ROD = ITEMS.register("tool_rod",
+            ()-> new Item(new Item.Properties()));
 
 
     //Armor
@@ -68,6 +70,14 @@ public class ModItems {
     public static final RegistryObject<Item> ALEXANDRITE_BOOTS = ITEMS.register("alexandrite_boots",
             ()-> new ArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new  Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(40))));
+
+    public static final RegistryObject<Item> ALEXANDRITE_HORSE_ARMOR = ITEMS.register("alexandrite_horse_armor",
+            ()-> new AnimalArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, AnimalArmorItem.BodyType.EQUESTRIAN,
+                    false, new Item.Properties().stacksTo(1)));
+
+    //Bow
+    public static final RegistryObject<Item> ALEXANDRITE_BOW = ITEMS.register("alexandrite_bow",
+            ()-> new BowItem(new Item.Properties().durability(500)));
 
 
     public static void register(IEventBus eventBus) {

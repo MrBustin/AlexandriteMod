@@ -1,0 +1,38 @@
+{
+  "chisel_use": {
+    "subtitles": "sounds.alexandritemod.chisel_use",
+    "sounds": [
+      "alexandritemod:chisel_use"
+    ]
+  },
+  "magic_block_break": {
+    "subtitle": "sounds.alexandritemod.magic_block_break",
+    "sounds": [
+      "alexandritemod:magic_block_break"
+    ]
+  },
+  "magic_block_step": {
+    "subtitle": "sounds.alexandritemod.magic_block_step",
+    "sounds": [
+      "alexandritemod:magic_block_step"
+    ]
+  },
+  "magic_block_place": {
+    "subtitle": "sounds.alexandritemod.magic_block_place",
+    "sounds": [
+      "alexandritemod:magic_block_place"
+    ]
+  },
+  "magic_block_hit": {
+    "subtitle": "sounds.alexandritemod.magic_block_hit",
+    "sounds": [
+      "alexandritemod:magic_block_hit"
+    ]
+  },
+  "magic_block_fall": {
+    "subtitle": "sounds.alexandritemod.magic_block_fall",
+    "sounds": [
+      "alexandritemod:magic_block_fall"
+    ]
+  }
+}
