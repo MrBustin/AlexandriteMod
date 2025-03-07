@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "alexandritemod:alexandrite_block",
-    "alexandritemod:raw_alexandrite_block",
-    "alexandritemod:alexandrite_ore",
-    "alexandritemod:alexandrite_deepslate_ore"
-  ]
-}

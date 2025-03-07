@@ -70,6 +70,11 @@ public class AlexandriteMod {
             event.accept(ModItems.CHISEL);
         }
 
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
+            event.accept(ModItems.KOHLRABI);
+            event.accept(ModItems.STRAWBERRY);
+        }
+
 
     }
 

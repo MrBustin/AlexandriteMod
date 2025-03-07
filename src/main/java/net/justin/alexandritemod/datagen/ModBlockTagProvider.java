@@ -2,6 +2,7 @@ package net.justin.alexandritemod.datagen;
 
 import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.block.ModBlocks;
+import net.justin.alexandritemod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -35,5 +36,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.FENCES).add(ModBlocks.ALEXANDRITE_FENCE.get());
         tag(BlockTags.FENCE_GATES).add(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
         tag(BlockTags.WALLS).add(ModBlocks.ALEXANDRITE_WALL.get());
+
+        tag(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL)
+                .add(ModBlocks.MAGIC_BLOCK.get())
+                .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
+
+
     }
 }

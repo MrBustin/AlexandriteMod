@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all" : "alexandritemod:block/alexandrite_ore"
-  }
-}

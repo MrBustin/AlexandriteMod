@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "alexandritemod:item/chisel"
+    "layer0": "alexandritemod:item/alexandrite_door"
   }
 }

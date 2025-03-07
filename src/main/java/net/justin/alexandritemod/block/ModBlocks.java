@@ -1,6 +1,7 @@
 package net.justin.alexandritemod.block;
 
 import net.justin.alexandritemod.AlexandriteMod;
+import net.justin.alexandritemod.block.custom.AlexandriteLampBlock;
 import net.justin.alexandritemod.block.custom.MagicBlock;
 import net.justin.alexandritemod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -50,7 +51,7 @@ public class ModBlocks {
     public static final RegistryObject<PressurePlateBlock> ALEXANDRITE_PRESSURE_PLATE = registerBlock("alexandrite_pressure_plate",
             () -> new PressurePlateBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
     public static final RegistryObject<ButtonBlock> ALEXANDRITE_BUTTON = registerBlock("alexandrite_button",
-            () -> new ButtonBlock(BlockSetType.IRON,1, BlockBehaviour.Properties.of().strength(3f)
+            () -> new ButtonBlock(BlockSetType.IRON,10, BlockBehaviour.Properties.of().strength(3f)
                     .requiresCorrectToolForDrops().noCollission()));
 
     public static final RegistryObject<FenceBlock> ALEXANDRITE_FENCE = registerBlock("alexandrite_fence",
@@ -64,6 +65,10 @@ public class ModBlocks {
             () -> new DoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
     public static final RegistryObject<TrapDoorBlock> ALEXANDRITE_TRAPDOOR = registerBlock("alexandrite_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+
+    public static final RegistryObject<Block> ALEXANDRITE_LAMP = registerBlock("alexandrite_lamp",
+            ()-> new AlexandriteLampBlock(BlockBehaviour.Properties.of().strength(3f)
+                    .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED) ? 15 : 0)));
 
 
 

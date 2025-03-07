@@ -3,6 +3,15 @@
   "item.alexandritemod.alexandrite": "Alexandrite Gem",
   "item.alexandritemod.raw_alexandrite": "Raw Alexandrite",
   "item.alexandritemod.chisel": "Chisel",
+  "item.alexandritemod.kohlrabi": "Kohlrabi",
+  "item.alexandritemod.strawberry": "Strawberry",
+  "item.alexandritemod.alexandrite_sword": "Alexandrite Sword",
+  "item.alexandritemod.alexandrite_shovel": "Alexandrite Shovel",
+  "item.alexandritemod.alexandrite_pickaxe": "Alexandrite Pickaxe",
+  "item.alexandritemod.alexandrite_hoe":  "Alexandrite Hoe",
+  "item.alexandritemod.alexandrite_axe": "Alexandrite Axe",
+
+
 
   "block.alexandritemod.alexandrite_block": "Block of Alexandrite",
   "block.alexandritemod.raw_alexandrite_block": "Block of Raw Alexandrite",
@@ -27,5 +36,7 @@
   "block.alexandritemod.alexandrite_wall": "Alexandrite Wall",
 
   "block.alexandritemod.alexandrite_door": "Alexandrite Door",
-  "block.alexandritemod.alexandrite_trapdoor": "Alexandrite Trapdoor"
+  "block.alexandritemod.alexandrite_trapdoor": "Alexandrite Trapdoor",
+
+  "block.alexandritemod.alexandrite_lamp": "Alexandrite Lamp"
 }
