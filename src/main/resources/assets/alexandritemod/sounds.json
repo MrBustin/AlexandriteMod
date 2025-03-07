@@ -34,5 +34,22 @@
     "sounds": [
       "alexandritemod:magic_block_fall"
     ]
+  },
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "alexandritemod:bar_brawl",
+        "stream": true
+      }
+    ]
+  },
+
+  "up": {
+    "sounds": [
+      {
+        "name": "alexandritemod:up",
+        "stream": true
+      }
+    ]
   }
 }

@@ -4,6 +4,7 @@ import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.item.custom.ChiselItem;
 import net.justin.alexandritemod.item.custom.HammerItem;
 import net.justin.alexandritemod.item.custom.ModArmorItem;
+import net.justin.alexandritemod.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,6 +15,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, AlexandriteMod.MOD_ID);
 
+    //Items
     public static final RegistryObject<Item> ALEXANDRITE = ITEMS.register("alexandrite",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_ALEXANDRITE = ITEMS.register("raw_alexandrite",
@@ -78,6 +80,13 @@ public class ModItems {
     //Bow
     public static final RegistryObject<Item> ALEXANDRITE_BOW = ITEMS.register("alexandrite_bow",
             ()-> new BowItem(new Item.Properties().durability(500)));
+
+    //Music Discs
+    public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISK = ITEMS.register("bar_brawl_music_disc",
+            ()-> new Item((new Item.Properties().jukeboxPlayable(ModSounds.BAR_BRAWL_KEY).stacksTo(1))));
+
+    public static final RegistryObject<Item> UP_MUSIC_DISK = ITEMS.register("up_music_disc",
+            ()-> new Item((new Item.Properties().jukeboxPlayable(ModSounds.UP_KEY).stacksTo(1))));
 
 
     public static void register(IEventBus eventBus) {

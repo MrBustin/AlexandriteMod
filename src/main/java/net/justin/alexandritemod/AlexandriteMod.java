@@ -70,7 +70,8 @@ public class AlexandriteMod {
         }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(ModItems.CHISEL);
+            event.accept(ModItems.BAR_BRAWL_MUSIC_DISK);
+            event.accept(ModItems.UP_MUSIC_DISK);
         }
 
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){

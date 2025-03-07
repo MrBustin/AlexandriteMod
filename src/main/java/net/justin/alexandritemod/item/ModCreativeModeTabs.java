@@ -31,6 +31,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MAGIC_BLOCK.get());
                         output.accept(ModItems.KOHLRABI.get());
                         output.accept(ModItems.STRAWBERRY.get());
+                        output.accept(ModItems.BAR_BRAWL_MUSIC_DISK.get());
+                        output.accept(ModItems.UP_MUSIC_DISK.get());
 
                         output.accept(ModBlocks.ALEXANDRITE_STAIRS.get());
                         output.accept(ModBlocks.ALEXANDRITE_SLAB.get());

@@ -71,6 +71,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
 
+        basicItem(ModItems.BAR_BRAWL_MUSIC_DISK.get());
+        basicItem(ModItems.UP_MUSIC_DISK.get());
+
 
 
 
