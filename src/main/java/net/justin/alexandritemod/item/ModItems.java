@@ -2,6 +2,8 @@ package net.justin.alexandritemod.item;
 
 import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.item.custom.ChiselItem;
+import net.justin.alexandritemod.item.custom.HammerItem;
+import net.justin.alexandritemod.item.custom.ModArmorItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,6 +28,8 @@ public class ModItems {
     public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
             ()-> new Item(new Item.Properties().food(ModFoodProperties.STRAWBERRY)));
 
+
+    //Tools
     public static final RegistryObject<Item> ALEXANDRITE_SWORD = ITEMS.register("alexandrite_sword",
             ()-> new SwordItem(ModToolTiers.ALEXANDRITE, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.ALEXANDRITE, 3, -2.4f))));
@@ -41,6 +45,29 @@ public class ModItems {
     public static final RegistryObject<Item> ALEXANDRITE_HOE = ITEMS.register("alexandrite_hoe",
             () -> new HoeItem(ModToolTiers.ALEXANDRITE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.ALEXANDRITE, 0, -3.0f))));
+
+    //Hammer
+    public static final RegistryObject<Item> ALEXANDRITE_HAMMER = ITEMS.register("alexandrite_hammer",
+            () -> new HammerItem(ModToolTiers.ALEXANDRITE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.ALEXANDRITE, 7, -3.5f))));
+
+
+    //Armor
+    public static final RegistryObject<Item> ALEXANDRITE_HELMET = ITEMS.register("alexandrite_helmet",
+            ()-> new ModArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new  Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(40))));
+
+    public static final RegistryObject<Item> ALEXANDRITE_CHESTPLATE = ITEMS.register("alexandrite_chestplate",
+            ()-> new ArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new  Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(40))));
+
+    public static final RegistryObject<Item> ALEXANDRITE_LEGGINGS = ITEMS.register("alexandrite_leggings",
+            ()-> new ArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new  Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(40))));
+
+    public static final RegistryObject<Item> ALEXANDRITE_BOOTS = ITEMS.register("alexandrite_boots",
+            ()-> new ArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new  Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(40))));
 
 
     public static void register(IEventBus eventBus) {

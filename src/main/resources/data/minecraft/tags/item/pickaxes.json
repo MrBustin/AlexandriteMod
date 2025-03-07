@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "alexandritemod:alexandrite_pickaxe"
+    "alexandritemod:alexandrite_pickaxe",
+    "alexandritemod:alexandrite_hammer"
   ]
 }
