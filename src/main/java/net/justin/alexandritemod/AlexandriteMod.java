@@ -2,11 +2,13 @@ package net.justin.alexandritemod;
 
 import com.mojang.logging.LogUtils;
 import net.justin.alexandritemod.block.ModBlocks;
+import net.justin.alexandritemod.enchantment.ModEnchantmentEffects;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
 import net.justin.alexandritemod.item.ModItems;
 import net.justin.alexandritemod.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -43,6 +45,8 @@ public class AlexandriteMod {
 
         ModSounds.register(modEventBus);
 
+        ModEnchantmentEffects.register(modEventBus);
+
 
 
         // Register the item to a creative tab
@@ -53,6 +57,12 @@ public class AlexandriteMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(()-> {
+            ComposterBlock.COMPOSTABLES.put(ModItems.KOHLRABI.get(), 0.65f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.STRAWBERRY.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.BLUEBERRY.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.KOHLRABI_SEEDS.get(), 0.3f);
+        });
 
     }
 
@@ -74,10 +84,9 @@ public class AlexandriteMod {
             event.accept(ModItems.UP_MUSIC_DISK);
         }
 
-        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
-            event.accept(ModItems.KOHLRABI);
-            event.accept(ModItems.STRAWBERRY);
-        }
+        //if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
+
+        //}
 
 
     }

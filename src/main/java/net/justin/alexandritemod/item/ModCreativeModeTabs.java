@@ -26,33 +26,44 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
                         output.accept(ModBlocks.ALEXANDRITE_ORE.get());
                         output.accept(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get());
-                        output.accept(ModItems.TOOL_ROD.get());
-                        output.accept(ModItems.CHISEL.get());
+                        output.accept(ModBlocks.ALEXANDRITE_NETHER_ORE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_LAMP.get());
                         output.accept(ModBlocks.MAGIC_BLOCK.get());
-                        output.accept(ModItems.KOHLRABI.get());
-                        output.accept(ModItems.STRAWBERRY.get());
-                        output.accept(ModItems.BAR_BRAWL_MUSIC_DISK.get());
-                        output.accept(ModItems.UP_MUSIC_DISK.get());
-
+                        output.accept(ModBlocks.WALNUT_PLANKS.get());
+                        output.accept(ModBlocks.WALNUT_WOOD.get());
+                        output.accept(ModBlocks.WALNUT_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_WALNUT_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_WALNUT_LOG.get());
+                        output.accept(ModBlocks.WALNUT_LEAVES.get());
                         output.accept(ModBlocks.ALEXANDRITE_STAIRS.get());
                         output.accept(ModBlocks.ALEXANDRITE_SLAB.get());
-
                         output.accept(ModBlocks.ALEXANDRITE_FENCE.get());
                         output.accept(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
                         output.accept(ModBlocks.ALEXANDRITE_WALL.get());
-
                         output.accept(ModBlocks.ALEXANDRITE_DOOR.get());
                         output.accept(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
                         output.accept(ModBlocks.ALEXANDRITE_BUTTON.get());
 
-                        output.accept(ModBlocks.ALEXANDRITE_LAMP.get());
+
+
+                        output.accept(ModItems.TOOL_ROD.get());
+                        output.accept(ModItems.CHISEL.get());
+                        output.accept(ModItems.KOHLRABI.get());
+                        output.accept(ModItems.STRAWBERRY.get());
+                        output.accept(ModItems.HONEY_BERRIES.get());
+                        output.accept(ModItems.BLUEBERRY.get());
+                        output.accept(ModItems.KOHLRABI_SEEDS.get());
+                        output.accept(ModItems.STRAWBERRY_SEEDS.get());
+                        output.accept(ModBlocks.WALNUT_SAPLING.get());
+                        output.accept(ModItems.BAR_BRAWL_MUSIC_DISK.get());
+                        output.accept(ModItems.UP_MUSIC_DISK.get());
+
 
                         output.accept(ModItems.ALEXANDRITE_AXE.get());
                         output.accept(ModItems.ALEXANDRITE_PICKAXE.get());
                         output.accept(ModItems.ALEXANDRITE_HOE.get());
                         output.accept(ModItems.ALEXANDRITE_SWORD.get());
                         output.accept(ModItems.ALEXANDRITE_SHOVEL.get());
-
                         output.accept(ModItems.ALEXANDRITE_HAMMER.get());
                         output.accept(ModItems.ALEXANDRITE_BOW.get());
 

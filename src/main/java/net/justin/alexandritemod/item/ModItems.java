@@ -1,6 +1,7 @@
 package net.justin.alexandritemod.item;
 
 import net.justin.alexandritemod.AlexandriteMod;
+import net.justin.alexandritemod.block.ModBlocks;
 import net.justin.alexandritemod.item.custom.ChiselItem;
 import net.justin.alexandritemod.item.custom.HammerItem;
 import net.justin.alexandritemod.item.custom.ModArmorItem;
@@ -24,11 +25,6 @@ public class ModItems {
     public static final RegistryObject<Item> CHISEL = ITEMS.register("chisel",
             ()-> new ChiselItem(new Item.Properties().durability(32)));
 
-    public static final RegistryObject<Item> KOHLRABI = ITEMS.register("kohlrabi",
-            ()-> new Item(new Item.Properties().food(ModFoodProperties.KOHLRABI)));
-
-    public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
-            ()-> new Item(new Item.Properties().food(ModFoodProperties.STRAWBERRY)));
 
 
     //Tools
@@ -87,6 +83,27 @@ public class ModItems {
 
     public static final RegistryObject<Item> UP_MUSIC_DISK = ITEMS.register("up_music_disc",
             ()-> new Item((new Item.Properties().jukeboxPlayable(ModSounds.UP_KEY).stacksTo(1))));
+
+    //Crops
+    public static final RegistryObject<Item> KOHLRABI_SEEDS = ITEMS.register("kohlrabi_seeds",
+            ()-> new ItemNameBlockItem(ModBlocks.KOHLRABI_CROP.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
+            ()-> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> KOHLRABI = ITEMS.register("kohlrabi",
+            ()-> new Item(new Item.Properties().food(ModFoodProperties.KOHLRABI)));
+
+    public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
+            ()-> new Item(new Item.Properties().food(ModFoodProperties.STRAWBERRY)));
+
+    public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberry",
+            ()-> new ItemNameBlockItem(ModBlocks.BLUEBERRY_BUSH.get(), new Item.Properties().food(ModFoodProperties.BLUEBERRY)));
+
+    public static final RegistryObject<Item> HONEY_BERRIES = ITEMS.register("honey_berries",
+            ()-> new ItemNameBlockItem(ModBlocks.HONEY_BERRY_BUSH.get(), new Item.Properties().food(ModFoodProperties.HONEY_BERRIES)));
+
+
 
 
     public static void register(IEventBus eventBus) {

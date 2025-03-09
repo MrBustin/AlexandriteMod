@@ -24,11 +24,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
                 .add(ModBlocks.ALEXANDRITE_ORE.get())
                 .add(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get())
+                .add(ModBlocks.ALEXANDRITE_NETHER_ORE.get())
                 .add(ModBlocks.MAGIC_BLOCK.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get())
-                .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
+                .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
+                .add(ModBlocks.ALEXANDRITE_NETHER_ORE.get());
 
        // tag(BlockTags.NEEDS_DIAMOND_TOOL)
        //         .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
@@ -40,6 +42,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL)
                 .add(ModBlocks.MAGIC_BLOCK.get())
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
+
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.WALNUT_LOG.get())
+                .add(ModBlocks.WALNUT_WOOD.get())
+                .add(ModBlocks.STRIPPED_WALNUT_LOG.get())
+                .add(ModBlocks.STRIPPED_WALNUT_WOOD.get());
 
 
     }

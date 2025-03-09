@@ -6,55 +6,76 @@
   "item.alexandritemod.tool_rod": "Tool Rod",
   "item.alexandritemod.kohlrabi": "Kohlrabi",
   "item.alexandritemod.strawberry": "Strawberry",
+  "item.alexandritemod.blueberry": "Blueberries",
   "item.alexandritemod.alexandrite_sword": "Alexandrite Sword",
   "item.alexandritemod.alexandrite_shovel": "Alexandrite Shovel",
   "item.alexandritemod.alexandrite_pickaxe": "Alexandrite Pickaxe",
   "item.alexandritemod.alexandrite_hoe":  "Alexandrite Hoe",
   "item.alexandritemod.alexandrite_axe": "Alexandrite Axe",
   "item.alexandritemod.alexandrite_hammer": "Alexandrite Hammer",
-
-
   "item.alexandritemod.alexandrite_helmet": "Alexandrite Helmet",
   "item.alexandritemod.alexandrite_chestplate": "Alexandrite Chestplate",
   "item.alexandritemod.alexandrite_leggings": "Alexandrite Leggings",
   "item.alexandritemod.alexandrite_boots": "Alexandrite Boots",
   "item.alexandritemod.alexandrite_horse_armor": "Alexandrite Horse Armor",
-
-
   "item.alexandritemod.alexandrite_bow": "Alexandrite Bow",
-
-
   "item.alexandritemod.bar_brawl_music_disc": "§bMusic Disc",
   "item.alexandritemod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl",
   "item.alexandritemod.up_music_disc": "§bMusic Disc",
   "item.alexandritemod.up_music_disc.desc": "Up - Cardi B",
+  "item.alexandritemod.kohlrabi_seeds": "Kohlrabi Seeds",
+  "item.alexandritemod.strawberry_seeds": "Strawberry Seeds",
+  "item.alexandritemod.honey_berries": "Honey Berries",
 
+
+
+
+  "enchantment.alexandritemod.lightning_striker": "Lightning Striker",
+
+  "creativetab.alexandritemod.alexandrite_items": "Alexandrite Additions",
+
+
+
+  "tooltip.alexandritemod.chisel.shift_down": "Converts Blocks to Brick Form",
+  "tooltip.alexandritemod.chisel": "Press §eShift§r for more Information",
+  "tooltip.alexandritemod.magic_block.tooltip": "Converts Concrete Powder to Concrete",
 
 
   "block.alexandritemod.alexandrite_block": "Block of Alexandrite",
   "block.alexandritemod.raw_alexandrite_block": "Block of Raw Alexandrite",
   "block.alexandritemod.alexandrite_ore": "Alexandrite Ore",
   "block.alexandritemod.alexandrite_deepslate_ore": "Deepslate Alexandrite Ore",
+  "block.alexandritemod.alexandrite_nether_ore": "Alexandrite Nether Ore",
   "block.alexandritemod.magic_block": "Concrete Converter",
-
-  "creativetab.alexandritemod.alexandrite_items": "Alexandrite Additions",
-
-  "tooltip.alexandritemod.chisel.shift_down": "Converts Blocks to Brick Form",
-  "tooltip.alexandritemod.chisel": "Press §eShift§r for more Information",
-  "tooltip.alexandritemod.magic_block.tooltip": "Converts Concrete Powder to Concrete",
-
   "block.alexandritemod.alexandrite_stairs": "Alexandrite Stairs",
   "block.alexandritemod.alexandrite_slab": "Alexandrite Slab",
-
   "block.alexandritemod.alexandrite_button": "Alexandrite Button",
   "block.alexandritemod.alexandrite_pressure_plate": "Alexandrite Pressure Plate",
-
   "block.alexandritemod.alexandrite_fence": "Alexandrite Fence",
   "block.alexandritemod.alexandrite_fence_gate": "Alexandrite Fence Gate",
   "block.alexandritemod.alexandrite_wall": "Alexandrite Wall",
-
   "block.alexandritemod.alexandrite_door": "Alexandrite Door",
   "block.alexandritemod.alexandrite_trapdoor": "Alexandrite Trapdoor",
+  "block.alexandritemod.alexandrite_lamp": "Alexandrite Lamp",
+  "block.alexandritemod.kohlrabi_crop": "Kohlrabi Crop",
+  "block.alexandritemod.strawberry_crop": "Strawberry Crop",
+  "block.alexandritemod.honey_berry_bush": "Honey Berry Bush",
+  "block.alexandritemod.walnut_log": "Walnut Log",
+  "block.alexandritemod.walnut_planks": "Walnut Planks",
+  "block.alexandritemod.walnut_wood": "Walnut Wood",
+  "block.alexandritemod.stripped_walnut_wood": "Stripped Walnut Wood",
+  "block.alexandritemod.stripped_walnut_log": "Stripped Walnut Log",
+  "block.alexandritemod.walnut_leaves": "Walnut Leaves",
+  "block.alexandritemod.walnut_sapling": "Walnut Sapling",
 
-  "block.alexandritemod.alexandrite_lamp": "Alexandrite Lamp"
+
+
+  "painting.alexandritemod.world.title": "World",
+  "painting.alexandritemod.world.author": "NanoAttack",
+  "painting.alexandritemod.shrimp.title": "Shrimp",
+  "painting.alexandritemod.shrimp.author": "NanoAttack",
+  "painting.alexandritemod.saw_them.title": "Saw Them",
+  "painting.alexandritemod.saw_them.author": "NanoAttack",
+  "painting.alexandritemod.maks.title": "Maks",
+  "painting.alexandritemod.maks.author": "Justin Byers"
 }

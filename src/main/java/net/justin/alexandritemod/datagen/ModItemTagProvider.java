@@ -1,5 +1,6 @@
 package net.justin.alexandritemod.datagen;
 import net.justin.alexandritemod.AlexandriteMod;
+import net.justin.alexandritemod.block.ModBlocks;
 import net.justin.alexandritemod.item.ModItems;
 import net.justin.alexandritemod.util.ModTags;
 import net.minecraft.core.HolderLookup;
@@ -33,5 +34,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.ALEXANDRITE_CHESTPLATE.get())
                 .add(ModItems.ALEXANDRITE_LEGGINGS.get())
                 .add(ModItems.ALEXANDRITE_BOOTS.get());
+
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.WALNUT_LOG.get().asItem())
+                .add(ModBlocks.WALNUT_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_WALNUT_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_WALNUT_WOOD.get().asItem());
+
+        tag(ItemTags.PLANKS)
+                .add(ModBlocks.WALNUT_PLANKS.get().asItem());
+
     }
 }

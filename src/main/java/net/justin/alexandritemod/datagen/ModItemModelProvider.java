@@ -48,7 +48,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.CHISEL.get());
         basicItem(ModItems.KOHLRABI.get());
+        basicItem(ModItems.KOHLRABI_SEEDS.get());
+        basicItem(ModItems.STRAWBERRY_SEEDS.get());
         basicItem(ModItems.STRAWBERRY.get());
+        basicItem(ModItems.BLUEBERRY.get());
+        basicItem(ModItems.HONEY_BERRIES.get());
 
         buttonItem(ModBlocks.ALEXANDRITE_BUTTON, ModBlocks.ALEXANDRITE_BLOCK);
         fenceItem(ModBlocks.ALEXANDRITE_FENCE, ModBlocks.ALEXANDRITE_BLOCK);
@@ -75,8 +79,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.UP_MUSIC_DISK.get());
 
 
+        saplingItem(ModBlocks.WALNUT_SAPLING);
+    }
 
-
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(AlexandriteMod.MOD_ID,"block/" + item.getId().getPath()));
     }
 
     // Shoutout to El_Redstoniano for making this
