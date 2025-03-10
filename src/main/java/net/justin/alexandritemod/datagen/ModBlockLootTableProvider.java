@@ -119,6 +119,17 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 createLeavesDrops(block, ModBlocks.WALNUT_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
 
+        dropSelf(ModBlocks.WALNUT_STAIRS.get());
+        dropSelf(ModBlocks.WALNUT_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.WALNUT_BUTTON.get());
+        dropSelf(ModBlocks.WALNUT_FENCE.get());
+        dropSelf(ModBlocks.WALNUT_FENCE_GATE.get());
+        dropSelf(ModBlocks.WALNUT_TRAPDOOR.get());
+        this.add(ModBlocks.WALNUT_DOOR.get(),
+                block -> createDoorTable(ModBlocks.WALNUT_DOOR.get()));
+        this.add(ModBlocks.WALNUT_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WALNUT_SLAB.get()));
+
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

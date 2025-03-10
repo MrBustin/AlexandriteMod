@@ -19,13 +19,29 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+
+        tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.WALNUT_STAIRS.get())
+                .add(ModBlocks.WALNUT_FENCE.get())
+                .add(ModBlocks.WALNUT_FENCE_GATE.get())
+                .add(ModBlocks.WALNUT_DOOR.get())
+                .add(ModBlocks.WALNUT_TRAPDOOR.get());
+
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.ALEXANDRITE_BLOCK.get())
                 .add(ModBlocks.RAW_ALEXANDRITE_BLOCK.get())
                 .add(ModBlocks.ALEXANDRITE_ORE.get())
                 .add(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get())
                 .add(ModBlocks.ALEXANDRITE_NETHER_ORE.get())
-                .add(ModBlocks.MAGIC_BLOCK.get());
+                .add(ModBlocks.MAGIC_BLOCK.get())
+                .add(ModBlocks.ALEXANDRITE_STAIRS.get())
+                .add(ModBlocks.ALEXANDRITE_SLAB.get())
+                .add(ModBlocks.ALEXANDRITE_BUTTON.get())
+                .add(ModBlocks.ALEXANDRITE_FENCE.get())
+                .add(ModBlocks.ALEXANDRITE_WALL.get())
+                .add(ModBlocks.ALEXANDRITE_FENCE_GATE.get())
+                .add(ModBlocks.ALEXANDRITE_DOOR.get())
+                .add(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get())
@@ -48,6 +64,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.WALNUT_WOOD.get())
                 .add(ModBlocks.STRIPPED_WALNUT_LOG.get())
                 .add(ModBlocks.STRIPPED_WALNUT_WOOD.get());
+
+        tag(BlockTags.WOODEN_FENCES).add(ModBlocks.WALNUT_FENCE.get());
+        tag(BlockTags.FENCE_GATES).add(ModBlocks.WALNUT_FENCE_GATE.get());
 
 
     }

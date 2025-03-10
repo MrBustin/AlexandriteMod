@@ -29,6 +29,8 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, AlexandriteMod.MOD_ID);
 
 
+
+
     // Blocks
     public static final RegistryObject<Block> ALEXANDRITE_BLOCK = registerBlock("alexandrite_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -87,6 +89,31 @@ public class ModBlocks {
             () -> new DoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
     public static final RegistryObject<TrapDoorBlock> ALEXANDRITE_TRAPDOOR = registerBlock("alexandrite_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+
+
+
+
+    public static final RegistryObject<StairBlock> WALNUT_STAIRS = registerBlock("walnut_stairs",
+            () -> new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
+    public static final RegistryObject<SlabBlock> WALNUT_SLAB = registerBlock("walnut_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
+
+     public static final RegistryObject<PressurePlateBlock> WALNUT_PRESSURE_PLATE = registerBlock("walnut_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)));
+    public static final RegistryObject<ButtonBlock> WALNUT_BUTTON = registerBlock("walnut_button",
+            () -> new ButtonBlock(BlockSetType.OAK,15, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
+
+    public static final RegistryObject<FenceBlock> WALNUT_FENCE = registerBlock("walnut_fence",
+           () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)));
+    public static final RegistryObject<FenceGateBlock> WALNUT_FENCE_GATE = registerBlock("walnut_fence_gate",
+            () -> new FenceGateBlock(WoodType.ACACIA, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
+
+    public static final RegistryObject<DoorBlock> WALNUT_DOOR = registerBlock("walnut_door",
+            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+    public static final RegistryObject<TrapDoorBlock> WALNUT_TRAPDOOR = registerBlock("walnut_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+
 
 
 
@@ -172,5 +199,9 @@ public class ModBlocks {
 
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
+
+        if (!ModBlocks.WALNUT_PLANKS.isPresent()) {
+            AlexandriteMod.LOGGER.error("Walnut Planks registry object is missing!");
+        }
     }
 }

@@ -20,7 +20,10 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.LinkedHashMap;
 
+
 public class ModItemModelProvider extends ItemModelProvider {
+
+
 
     private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
     static {
@@ -80,6 +83,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 
         saplingItem(ModBlocks.WALNUT_SAPLING);
+
+        buttonItem(ModBlocks.WALNUT_BUTTON, ModBlocks.WALNUT_PLANKS);
+        fenceItem(ModBlocks.WALNUT_FENCE, ModBlocks.WALNUT_PLANKS);
+
+        simpleBlockItem(ModBlocks.WALNUT_DOOR);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

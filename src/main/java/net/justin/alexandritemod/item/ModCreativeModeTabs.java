@@ -43,6 +43,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ALEXANDRITE_DOOR.get());
                         output.accept(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
                         output.accept(ModBlocks.ALEXANDRITE_BUTTON.get());
+                        output.accept(ModBlocks.WALNUT_STAIRS.get());
+                        output.accept(ModBlocks.WALNUT_SLAB.get());
+                        output.accept(ModBlocks.WALNUT_FENCE.get());
+                        output.accept(ModBlocks.WALNUT_FENCE_GATE.get());
+                        output.accept(ModBlocks.WALNUT_DOOR.get());
+                        output.accept(ModBlocks.WALNUT_TRAPDOOR.get());
+                        output.accept(ModBlocks.WALNUT_BUTTON.get());
 
 
 
