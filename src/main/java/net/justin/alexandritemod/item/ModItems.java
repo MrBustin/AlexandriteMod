@@ -2,11 +2,13 @@ package net.justin.alexandritemod.item;
 
 import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.block.ModBlocks;
+import net.justin.alexandritemod.entity.ModEntities;
 import net.justin.alexandritemod.item.custom.ChiselItem;
 import net.justin.alexandritemod.item.custom.HammerItem;
 import net.justin.alexandritemod.item.custom.ModArmorItem;
 import net.justin.alexandritemod.sound.ModSounds;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,6 +26,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> CHISEL = ITEMS.register("chisel",
             ()-> new ChiselItem(new Item.Properties().durability(32)));
+
+    public static final RegistryObject<Item> TRICERATOPS_SPAWN_EGG = ITEMS.register("triceratops_spawn_egg",
+            ()-> new ForgeSpawnEggItem(ModEntities.TRICERATOPS, 0x53524b,0xdac741, new Item.Properties()));
 
 
 

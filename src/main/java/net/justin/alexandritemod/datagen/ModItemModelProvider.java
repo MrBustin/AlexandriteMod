@@ -88,6 +88,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         fenceItem(ModBlocks.WALNUT_FENCE, ModBlocks.WALNUT_PLANKS);
 
         simpleBlockItem(ModBlocks.WALNUT_DOOR);
+
+        withExistingParent(ModItems.TRICERATOPS_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

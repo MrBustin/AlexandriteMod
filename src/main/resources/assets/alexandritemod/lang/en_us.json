@@ -26,6 +26,7 @@
   "item.alexandritemod.kohlrabi_seeds": "Kohlrabi Seeds",
   "item.alexandritemod.strawberry_seeds": "Strawberry Seeds",
   "item.alexandritemod.honey_berries": "Honey Berries",
+  "item.alexandritemod.triceratops_spawn_egg": "Triceratops Spawn Egg",
 
 
 
@@ -85,5 +86,7 @@
   "painting.alexandritemod.saw_them.title": "Saw Them",
   "painting.alexandritemod.saw_them.author": "NanoAttack",
   "painting.alexandritemod.maks.title": "Maks",
-  "painting.alexandritemod.maks.author": "Justin Byers"
+  "painting.alexandritemod.maks.author": "Justin Byers",
+
+  "entity.alexandritemod.triceratops": "Triceratops"
 }

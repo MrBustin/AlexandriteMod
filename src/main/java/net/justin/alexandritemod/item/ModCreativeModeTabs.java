@@ -55,6 +55,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.TOOL_ROD.get());
                         output.accept(ModItems.CHISEL.get());
+                        output.accept(ModItems.TRICERATOPS_SPAWN_EGG.get());
                         output.accept(ModItems.KOHLRABI.get());
                         output.accept(ModItems.STRAWBERRY.get());
                         output.accept(ModItems.HONEY_BERRIES.get());
