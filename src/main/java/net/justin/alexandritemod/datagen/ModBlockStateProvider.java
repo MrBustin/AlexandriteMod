@@ -5,9 +5,7 @@ import net.justin.alexandritemod.block.ModBlocks;
 import net.justin.alexandritemod.block.custom.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.SweetBerryBushBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -103,7 +101,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.WALNUT_TRAPDOOR, "_bottom");
 
 
+
     }
+
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),

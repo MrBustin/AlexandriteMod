@@ -130,6 +130,18 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.WALNUT_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.WALNUT_SLAB.get()));
 
+        dropSelf(ModBlocks.WALNUT_CHAIR.get());
+        dropSelf(ModBlocks.OAK_CHAIR.get());
+        dropSelf(ModBlocks.SPRUCE_CHAIR.get());
+        dropSelf(ModBlocks.BIRCH_CHAIR.get());
+        dropSelf(ModBlocks.JUNGLE_CHAIR.get());
+        dropSelf(ModBlocks.ACACIA_CHAIR.get());
+        dropSelf(ModBlocks.DARK_OAK_CHAIR.get());
+        dropSelf(ModBlocks.MANGROVE_CHAIR.get());
+        dropSelf(ModBlocks.CHERRY_CHAIR.get());
+        dropSelf(ModBlocks.CRIMSON_CHAIR.get());
+        dropSelf(ModBlocks.WARPED_CHAIR.get());
+
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

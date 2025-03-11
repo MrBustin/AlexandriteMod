@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.justin.alexandritemod.block.ModBlocks;
 import net.justin.alexandritemod.enchantment.ModEnchantmentEffects;
 import net.justin.alexandritemod.entity.ModEntities;
+import net.justin.alexandritemod.entity.client.ChairRenderer;
 import net.justin.alexandritemod.entity.client.TriceratopsRenderer;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
 import net.justin.alexandritemod.item.ModItems;
@@ -108,6 +109,7 @@ public class AlexandriteMod {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
             EntityRenderers.register(ModEntities.TRICERATOPS.get(), TriceratopsRenderer::new);
+            EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
         }
     }
 }

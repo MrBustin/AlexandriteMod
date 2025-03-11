@@ -1,5 +1,6 @@
 package net.justin.alexandritemod.block;
 
+import com.mojang.serialization.MapCodec;
 import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.block.custom.*;
 import net.justin.alexandritemod.item.ModItems;
@@ -118,6 +119,8 @@ public class ModBlocks {
 
 
 
+
+
     // Crops
     public static final RegistryObject<Block> KOHLRABI_CROP = BLOCKS.register("kohlrabi_crop",
             () -> new KohlrabiCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
@@ -185,6 +188,40 @@ public class ModBlocks {
     public static final RegistryObject<Block> WALNUT_SAPLING = registerBlock("walnut_sapling",
             ()-> new SaplingBlock(ModTreeGrowers.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
+    //Chairs
+    public static final RegistryObject<Block> WALNUT_CHAIR = registerBlock("chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> OAK_CHAIR = registerBlock("oak_chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SPRUCE_CHAIR = registerBlock("spruce_chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> BIRCH_CHAIR = registerBlock("birch_chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> JUNGLE_CHAIR = registerBlock("jungle_chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> ACACIA_CHAIR = registerBlock("acacia_chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> DARK_OAK_CHAIR = registerBlock("dark_oak_chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> MANGROVE_CHAIR = registerBlock("mangrove_chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> CHERRY_CHAIR = registerBlock("cherry_chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> CRIMSON_CHAIR = registerBlock("crimson_chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> WARPED_CHAIR = registerBlock("warped_chair",
+            ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
@@ -200,8 +237,8 @@ public class ModBlocks {
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
 
-        if (!ModBlocks.WALNUT_PLANKS.isPresent()) {
-            AlexandriteMod.LOGGER.error("Walnut Planks registry object is missing!");
-        }
     }
+
+
+
 }

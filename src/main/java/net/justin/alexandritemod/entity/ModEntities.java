@@ -1,6 +1,7 @@
 package net.justin.alexandritemod.entity;
 
 import net.justin.alexandritemod.AlexandriteMod;
+import net.justin.alexandritemod.entity.custom.ChairEntity;
 import net.justin.alexandritemod.entity.custom.TriceratopsEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -16,6 +17,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<TriceratopsEntity>> TRICERATOPS =
             ENTITY_TYPE.register("triceratops", () -> EntityType.Builder.of(TriceratopsEntity::new, MobCategory.CREATURE)
                     .sized(1.5f,1.5f).build("triceatops"));
+
+    public static final RegistryObject<EntityType<ChairEntity>> CHAIR =
+            ENTITY_TYPE.register("chair_entity", () -> EntityType.Builder.of(ChairEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f).build("chair_entity"));
 
 
 

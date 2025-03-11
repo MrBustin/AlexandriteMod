@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "alexandritemod:block/crimson_chair"
+    },
+    "facing=south": {
+      "model": "alexandritemod:block/crimson_chair",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "alexandritemod:block/crimson_chair",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "alexandritemod:block/crimson_chair",
+      "y": 270
+    }
+  }
+}

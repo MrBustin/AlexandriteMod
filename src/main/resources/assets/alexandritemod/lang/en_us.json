@@ -79,6 +79,20 @@
 
 
 
+  "block.alexandritemod.chair": "Walnut Chair",
+  "block.alexandritemod.oak_chair": "Oak Chair",
+  "block.alexandritemod.spruce_chair": "Spruce Chair",
+  "block.alexandritemod.birch_chair": "Birch Chair",
+  "block.alexandritemod.jungle_chair": "Jungle Chair",
+  "block.alexandritemod.acacia_chair": "Acacia Chair",
+  "block.alexandritemod.dark_oak_chair": "Dark Oak Chair",
+  "block.alexandritemod.mangrove_chair": "Mangrove Chair",
+  "block.alexandritemod.cherry_chair": "Cherry Chair",
+  "block.alexandritemod.crimson_chair": "Crimson Chair",
+  "block.alexandritemod.warped_chair": "Warped Chair",
+
+
+
   "painting.alexandritemod.world.title": "World",
   "painting.alexandritemod.world.author": "NanoAttack",
   "painting.alexandritemod.shrimp.title": "Shrimp",
