@@ -5,6 +5,7 @@ import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.block.custom.*;
 import net.justin.alexandritemod.item.ModItems;
 import net.justin.alexandritemod.sound.ModSounds;
+import net.justin.alexandritemod.util.ModWoodTypes;
 import net.justin.alexandritemod.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -16,7 +17,9 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -35,7 +38,7 @@ public class ModBlocks {
     // Blocks
     public static final RegistryObject<Block> ALEXANDRITE_BLOCK = registerBlock("alexandrite_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.METAL)));
 
     public static final RegistryObject<Block> RAW_ALEXANDRITE_BLOCK = registerBlock("raw_alexandrite_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -188,6 +191,25 @@ public class ModBlocks {
     public static final RegistryObject<Block> WALNUT_SAPLING = registerBlock("walnut_sapling",
             ()-> new SaplingBlock(ModTreeGrowers.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
+
+
+    public static final RegistryObject<Block> WALNUT_SIGN = registerBlock("walnut_sign",
+        ()-> new ModStandingSignBlock(ModWoodTypes.WALNUT,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
+
+    public static final RegistryObject<Block> WALNUT_WALL_SIGN = registerBlock("walnut_wall_sign",
+            ()-> new ModWallSignBlock(ModWoodTypes.WALNUT,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
+
+
+
+    public static final RegistryObject<Block> WALNUT_HANGING_SIGN = registerBlock("walnut_hanging_sign",
+            ()-> new ModHangingSignBlock(ModWoodTypes.WALNUT,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+
+    public static final RegistryObject<Block> WALNUT_WALL_HANGING_SIGN = registerBlock("walnut_wall_hanging_sign",
+            ()-> new ModWallHangingSignBlock(ModWoodTypes.WALNUT,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
+
+
+
+
     //Chairs
     public static final RegistryObject<Block> WALNUT_CHAIR = registerBlock("chair",
             ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
@@ -221,6 +243,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> WARPED_CHAIR = registerBlock("warped_chair",
             ()-> new ChairBlock(BlockBehaviour.Properties.of().noOcclusion().strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> PEDESTAL = registerBlock("pedestal",
+            ()-> new PedestalBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
 
 

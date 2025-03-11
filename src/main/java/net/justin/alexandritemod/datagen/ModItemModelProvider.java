@@ -90,6 +90,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.WALNUT_DOOR);
 
         withExistingParent(ModItems.TRICERATOPS_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
+
+        basicItem(ModItems.WALNUT_SIGN.get());
+        basicItem(ModItems.WALNUT_HANGING_SIGN.get());
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

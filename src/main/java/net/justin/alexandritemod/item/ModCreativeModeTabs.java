@@ -50,6 +50,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.WALNUT_DOOR.get());
                         output.accept(ModBlocks.WALNUT_TRAPDOOR.get());
                         output.accept(ModBlocks.WALNUT_BUTTON.get());
+                        output.accept(ModItems.WALNUT_SIGN.get());
+                        output.accept(ModItems.WALNUT_HANGING_SIGN.get());
                         output.accept(ModBlocks.WALNUT_CHAIR.get());
                         output.accept(ModBlocks.OAK_CHAIR.get());
                         output.accept(ModBlocks.SPRUCE_CHAIR.get());
@@ -61,6 +63,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CHERRY_CHAIR.get());
                         output.accept(ModBlocks.CRIMSON_CHAIR.get());
                         output.accept(ModBlocks.WARPED_CHAIR.get());
+                        output.accept(ModBlocks.PEDESTAL.get());
 
 
 

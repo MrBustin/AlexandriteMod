@@ -57,6 +57,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ALEXANDRITE_WALL.get());
         dropSelf(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
         dropSelf(ModBlocks.ALEXANDRITE_LAMP.get());
+        dropSelf(ModBlocks.PEDESTAL.get());
 
         this.add(ModBlocks.ALEXANDRITE_DOOR.get(),
                 block -> createDoorTable(ModBlocks.ALEXANDRITE_DOOR.get()));
@@ -141,6 +142,16 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CHERRY_CHAIR.get());
         dropSelf(ModBlocks.CRIMSON_CHAIR.get());
         dropSelf(ModBlocks.WARPED_CHAIR.get());
+
+
+        this.add(ModBlocks.WALNUT_SIGN.get(), block ->
+                createSingleItemTable(ModItems.WALNUT_SIGN.get()));
+        this.add(ModBlocks.WALNUT_WALL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.WALNUT_SIGN.get()));
+        this.add(ModBlocks.WALNUT_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.WALNUT_HANGING_SIGN.get()));
+        this.add(ModBlocks.WALNUT_WALL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.WALNUT_HANGING_SIGN.get()));
 
     }
 

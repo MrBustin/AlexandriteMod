@@ -2,6 +2,8 @@ package net.justin.alexandritemod;
 
 import com.mojang.logging.LogUtils;
 import net.justin.alexandritemod.block.ModBlocks;
+import net.justin.alexandritemod.block.entity.ModBlockEntities;
+import net.justin.alexandritemod.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.justin.alexandritemod.enchantment.ModEnchantmentEffects;
 import net.justin.alexandritemod.entity.ModEntities;
 import net.justin.alexandritemod.entity.client.ChairRenderer;
@@ -9,11 +11,14 @@ import net.justin.alexandritemod.entity.client.TriceratopsRenderer;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
 import net.justin.alexandritemod.item.ModItems;
 import net.justin.alexandritemod.sound.ModSounds;
+import net.justin.alexandritemod.util.ModWoodTypes;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -51,6 +56,8 @@ public class AlexandriteMod {
 
         ModEnchantmentEffects.register(modEventBus);
         ModEntities.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
 
 
@@ -107,9 +114,16 @@ public class AlexandriteMod {
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            Sheets.addWoodType(ModWoodTypes.WALNUT);
 
             EntityRenderers.register(ModEntities.TRICERATOPS.get(), TriceratopsRenderer::new);
             EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event){
+            event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
+
         }
     }
 }

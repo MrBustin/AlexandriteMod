@@ -108,6 +108,13 @@ public class ModItems {
     public static final RegistryObject<Item> HONEY_BERRIES = ITEMS.register("honey_berries",
             ()-> new ItemNameBlockItem(ModBlocks.HONEY_BERRY_BUSH.get(), new Item.Properties().food(ModFoodProperties.HONEY_BERRIES)));
 
+    //Signs
+    public static final RegistryObject<Item> WALNUT_SIGN = ITEMS.register("walnut_sign_item",
+            ()-> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.WALNUT_SIGN.get(), ModBlocks.WALNUT_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> WALNUT_HANGING_SIGN = ITEMS.register("walnut_hanging_sign_item",
+            ()-> new HangingSignItem(ModBlocks.WALNUT_HANGING_SIGN.get(), ModBlocks.WALNUT_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
 
 
 
