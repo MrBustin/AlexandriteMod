@@ -256,6 +256,51 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Blocks.WARPED_PLANKS), has(Blocks.WARPED_PLANKS)).save(pRecipeOutput);
 
 
+
+        //Tables
+        tableBuilder(ModBlocks.WALNUT_TABLE.get(), Ingredient.of(ModBlocks.WALNUT_PLANKS.get()))
+                .unlockedBy(getHasName(ModBlocks.WALNUT_PLANKS.get()), has(ModBlocks.WALNUT_PLANKS.get())).save(pRecipeOutput);
+
+        tableBuilder(ModBlocks.OAK_TABLE.get(), Ingredient.of(Blocks.OAK_PLANKS))
+                .unlockedBy(getHasName(Blocks.OAK_PLANKS), has(Blocks.OAK_PLANKS)).save(pRecipeOutput);
+
+        tableBuilder(ModBlocks.SPRUCE_TABLE.get(), Ingredient.of(Blocks.SPRUCE_PLANKS))
+                .unlockedBy(getHasName(Blocks.SPRUCE_PLANKS), has(Blocks.SPRUCE_PLANKS)).save(pRecipeOutput);
+
+        tableBuilder(ModBlocks.BIRCH_TABLE.get(), Ingredient.of(Blocks.BIRCH_PLANKS))
+                .unlockedBy(getHasName(Blocks.BIRCH_PLANKS), has(Blocks.BIRCH_PLANKS)).save(pRecipeOutput);
+
+        tableBuilder(ModBlocks.JUNGLE_TABLE.get(), Ingredient.of(Blocks.JUNGLE_PLANKS))
+                .unlockedBy(getHasName(Blocks.JUNGLE_PLANKS), has(Blocks.JUNGLE_PLANKS)).save(pRecipeOutput);
+
+        tableBuilder(ModBlocks.ACACIA_TABLE.get(), Ingredient.of(Blocks.ACACIA_PLANKS))
+                .unlockedBy(getHasName(Blocks.ACACIA_PLANKS), has(Blocks.ACACIA_PLANKS)).save(pRecipeOutput);
+
+        tableBuilder(ModBlocks.DARK_OAK_TABLE.get(), Ingredient.of(Blocks.DARK_OAK_PLANKS))
+                .unlockedBy(getHasName(Blocks.DARK_OAK_PLANKS), has(Blocks.DARK_OAK_PLANKS)).save(pRecipeOutput);
+
+        tableBuilder(ModBlocks.MANGROVE_TABLE.get(), Ingredient.of(Blocks.MANGROVE_PLANKS))
+                .unlockedBy(getHasName(Blocks.MANGROVE_PLANKS), has(Blocks.MANGROVE_PLANKS)).save(pRecipeOutput);
+
+        tableBuilder(ModBlocks.CHERRY_TABLE.get(), Ingredient.of(Blocks.CHERRY_PLANKS))
+                .unlockedBy(getHasName(Blocks.CHERRY_PLANKS), has(Blocks.CHERRY_PLANKS)).save(pRecipeOutput);
+
+        tableBuilder(ModBlocks.CRIMSON_TABLE.get(), Ingredient.of(Blocks.CRIMSON_PLANKS))
+                .unlockedBy(getHasName(Blocks.CRIMSON_PLANKS), has(Blocks.CRIMSON_PLANKS)).save(pRecipeOutput);
+
+        tableBuilder(ModBlocks.WARPED_TABLE.get(), Ingredient.of(Blocks.WARPED_PLANKS))
+                .unlockedBy(getHasName(Blocks.WARPED_PLANKS), has(Blocks.WARPED_PLANKS)).save(pRecipeOutput);
+
+
+    }
+
+    protected static RecipeBuilder tableBuilder(ItemLike pTable, Ingredient pMaterial) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pTable, 1)
+                .define('#', pMaterial)
+                .define('S', Items.STICK)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("S S");
     }
 
     protected static RecipeBuilder chairBuilder(ItemLike pChair, Ingredient pMaterial) {

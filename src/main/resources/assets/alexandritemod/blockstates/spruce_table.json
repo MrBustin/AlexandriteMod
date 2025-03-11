@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "alexandritemod:block/spruce_table"
+    },
+    "facing=south": {
+      "model": "alexandritemod:block/spruce_table",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "alexandritemod:block/spruce_table",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "alexandritemod:block/spruce_table",
+      "y": 270
+    }
+  }
+}

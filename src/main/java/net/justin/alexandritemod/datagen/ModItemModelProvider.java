@@ -176,4 +176,5 @@ public class ModItemModelProvider extends ItemModelProvider {
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(AlexandriteMod.MOD_ID,"item/" + item.getId().getPath()));
     }
+
 }

@@ -25,7 +25,31 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.WALNUT_FENCE.get())
                 .add(ModBlocks.WALNUT_FENCE_GATE.get())
                 .add(ModBlocks.WALNUT_DOOR.get())
-                .add(ModBlocks.WALNUT_TRAPDOOR.get());
+                .add(ModBlocks.WALNUT_TRAPDOOR.get())
+                .add(ModBlocks.WALNUT_CHAIR.get())
+                .add(ModBlocks.OAK_CHAIR.get())
+                .add(ModBlocks.SPRUCE_CHAIR.get())
+                .add(ModBlocks.BIRCH_CHAIR.get())
+                .add(ModBlocks.JUNGLE_CHAIR.get())
+                .add(ModBlocks.ACACIA_CHAIR.get())
+                .add(ModBlocks.DARK_OAK_CHAIR.get())
+                .add(ModBlocks.MANGROVE_CHAIR.get())
+                .add(ModBlocks.CHERRY_CHAIR.get())
+                .add(ModBlocks.CRIMSON_CHAIR.get())
+                .add(ModBlocks.WARPED_CHAIR.get())
+                .add(ModBlocks.WALNUT_TABLE.get())
+                .add(ModBlocks.OAK_TABLE.get())
+                .add(ModBlocks.SPRUCE_TABLE.get())
+                .add(ModBlocks.BIRCH_TABLE.get())
+                .add(ModBlocks.JUNGLE_TABLE.get())
+                .add(ModBlocks.ACACIA_TABLE.get())
+                .add(ModBlocks.DARK_OAK_TABLE.get())
+                .add(ModBlocks.MANGROVE_TABLE.get())
+                .add(ModBlocks.CHERRY_TABLE.get())
+                .add(ModBlocks.CRIMSON_TABLE.get())
+                .add(ModBlocks.WARPED_TABLE.get());
+
+
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.ALEXANDRITE_BLOCK.get())
@@ -41,7 +65,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ALEXANDRITE_WALL.get())
                 .add(ModBlocks.ALEXANDRITE_FENCE_GATE.get())
                 .add(ModBlocks.ALEXANDRITE_DOOR.get())
-                .add(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
+                .add(ModBlocks.ALEXANDRITE_TRAPDOOR.get())
+                .add(ModBlocks.PEDESTAL.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get())

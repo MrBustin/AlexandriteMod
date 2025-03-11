@@ -144,6 +144,19 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.WARPED_CHAIR.get());
 
 
+        dropSelf(ModBlocks.WALNUT_TABLE.get());
+        dropSelf(ModBlocks.OAK_TABLE.get());
+        dropSelf(ModBlocks.SPRUCE_TABLE.get());
+        dropSelf(ModBlocks.BIRCH_TABLE.get());
+        dropSelf(ModBlocks.JUNGLE_TABLE.get());
+        dropSelf(ModBlocks.ACACIA_TABLE.get());
+        dropSelf(ModBlocks.DARK_OAK_TABLE.get());
+        dropSelf(ModBlocks.MANGROVE_TABLE.get());
+        dropSelf(ModBlocks.CHERRY_TABLE.get());
+        dropSelf(ModBlocks.CRIMSON_TABLE.get());
+        dropSelf(ModBlocks.WARPED_TABLE.get());
+
+
         this.add(ModBlocks.WALNUT_SIGN.get(), block ->
                 createSingleItemTable(ModItems.WALNUT_SIGN.get()));
         this.add(ModBlocks.WALNUT_WALL_SIGN.get(), block ->

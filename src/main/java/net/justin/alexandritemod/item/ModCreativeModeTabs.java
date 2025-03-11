@@ -63,6 +63,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CHERRY_CHAIR.get());
                         output.accept(ModBlocks.CRIMSON_CHAIR.get());
                         output.accept(ModBlocks.WARPED_CHAIR.get());
+                        output.accept(ModBlocks.WALNUT_TABLE.get());
+                        output.accept(ModBlocks.OAK_TABLE.get());
+                        output.accept(ModBlocks.SPRUCE_TABLE.get());
+                        output.accept(ModBlocks.BIRCH_TABLE.get());
+                        output.accept(ModBlocks.JUNGLE_TABLE.get());
+                        output.accept(ModBlocks.ACACIA_TABLE.get());
+                        output.accept(ModBlocks.DARK_OAK_TABLE.get());
+                        output.accept(ModBlocks.MANGROVE_TABLE.get());
+                        output.accept(ModBlocks.CHERRY_TABLE.get());
+                        output.accept(ModBlocks.CRIMSON_TABLE.get());
+                        output.accept(ModBlocks.WARPED_TABLE.get());
                         output.accept(ModBlocks.PEDESTAL.get());
 
 

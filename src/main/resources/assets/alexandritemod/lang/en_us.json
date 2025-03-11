@@ -95,6 +95,19 @@
   "block.alexandritemod.warped_chair": "Warped Chair",
 
 
+  "block.alexandritemod.table": "Walnut Table",
+  "block.alexandritemod.oak_table": "Oak Table",
+  "block.alexandritemod.spruce_table": "Spruce Table",
+  "block.alexandritemod.birch_table": "Birch Table",
+  "block.alexandritemod.jungle_table": "Jungle Table",
+  "block.alexandritemod.acacia_table": "Acacia Table",
+  "block.alexandritemod.dark_oak_table": "Dark Oak Table",
+  "block.alexandritemod.mangrove_table": "Mangrove Table",
+  "block.alexandritemod.cherry_table": "Cherry Table",
+  "block.alexandritemod.crimson_table": "Crimson Table",
+  "block.alexandritemod.warped_table": "Warped Table",
+
+
 
   "painting.alexandritemod.world.title": "World",
   "painting.alexandritemod.world.author": "NanoAttack",
