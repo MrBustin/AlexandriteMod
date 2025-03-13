@@ -6,6 +6,7 @@ import net.justin.alexandritemod.block.entity.ModBlockEntities;
 import net.justin.alexandritemod.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.justin.alexandritemod.enchantment.ModEnchantmentEffects;
 import net.justin.alexandritemod.entity.ModEntities;
+import net.justin.alexandritemod.entity.client.BeaverRenderer;
 import net.justin.alexandritemod.entity.client.ChairRenderer;
 import net.justin.alexandritemod.entity.client.TriceratopsRenderer;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
@@ -117,6 +118,7 @@ public class AlexandriteMod {
             Sheets.addWoodType(ModWoodTypes.WALNUT);
 
             EntityRenderers.register(ModEntities.TRICERATOPS.get(), TriceratopsRenderer::new);
+            EntityRenderers.register(ModEntities.BEAVER.get(), BeaverRenderer::new);
             EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
         }
 
