@@ -163,6 +163,7 @@ public class TriceratopsModel<T extends TriceratopsEntity> extends HierarchicalM
 
         this.animateWalk(TriceratopsAnimations.TRIKE_WALKING, limbSwing, limbSwingAmount, 2f, 2.5f);
         this.animate(entity.idleAnimationState, TriceratopsAnimations.TRIKE_IDLE, ageInTicks, 1f);
+        this.animate(entity.attackAnimationState, TriceratopsAnimations.TRIKE_ATTACK, ageInTicks, 1f);
 
     }
 

@@ -3,7 +3,9 @@ package net.justin.alexandritemod.event;
 
 import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.entity.ModEntities;
+import net.justin.alexandritemod.entity.client.BeaverModel;
 import net.justin.alexandritemod.entity.client.TriceratopsModel;
+import net.justin.alexandritemod.entity.custom.BeaverEntity;
 import net.justin.alexandritemod.entity.custom.TriceratopsEntity;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.animal.Animal;
@@ -19,12 +21,14 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
         event.registerLayerDefinition(TriceratopsModel.LAYER_LOCATION, TriceratopsModel::createBodyLayer);
+        event.registerLayerDefinition(BeaverModel.LAYER_LOCATION, BeaverModel::createBodyLayer);
 
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.TRICERATOPS.get(), TriceratopsEntity.createAttributes().build());
+        event.put(ModEntities.BEAVER.get(), BeaverEntity.createAttributes().build());
     }
 
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event){

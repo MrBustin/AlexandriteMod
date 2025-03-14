@@ -12,6 +12,7 @@ import net.justin.alexandritemod.entity.client.TriceratopsRenderer;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
 import net.justin.alexandritemod.item.ModItems;
 import net.justin.alexandritemod.sound.ModSounds;
+import net.justin.alexandritemod.util.ModItemProperties;
 import net.justin.alexandritemod.util.ModWoodTypes;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -97,6 +98,11 @@ public class AlexandriteMod {
             event.accept(ModItems.UP_MUSIC_DISK);
         }
 
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
+            event.accept(ModItems.TRICERATOPS_SPAWN_EGG);
+            event.accept(ModItems.BEAVER_SPAWN_EGG);
+        }
+
         //if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
 
         //}
@@ -116,6 +122,8 @@ public class AlexandriteMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             Sheets.addWoodType(ModWoodTypes.WALNUT);
+
+            ModItemProperties.addCustomItemProperties();
 
             EntityRenderers.register(ModEntities.TRICERATOPS.get(), TriceratopsRenderer::new);
             EntityRenderers.register(ModEntities.BEAVER.get(), BeaverRenderer::new);

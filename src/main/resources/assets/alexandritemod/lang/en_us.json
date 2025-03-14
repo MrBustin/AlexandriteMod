@@ -27,6 +27,7 @@
   "item.alexandritemod.strawberry_seeds": "Strawberry Seeds",
   "item.alexandritemod.honey_berries": "Honey Berries",
   "item.alexandritemod.triceratops_spawn_egg": "Triceratops Spawn Egg",
+  "item.alexandritemod.beaver_spawn_egg": "Beaver Spawn Egg",
 
 
 
@@ -118,5 +119,6 @@
   "painting.alexandritemod.maks.title": "Maks",
   "painting.alexandritemod.maks.author": "Justin Byers",
 
-  "entity.alexandritemod.triceratops": "Triceratops"
+  "entity.alexandritemod.triceratops": "Triceratops",
+  "entity.alexandritemod.beaver": "Beaver"
 }

@@ -30,6 +30,9 @@ public class ModItems {
     public static final RegistryObject<Item> TRICERATOPS_SPAWN_EGG = ITEMS.register("triceratops_spawn_egg",
             ()-> new ForgeSpawnEggItem(ModEntities.TRICERATOPS, 0x53524b,0xdac741, new Item.Properties()));
 
+    public static final RegistryObject<Item> BEAVER_SPAWN_EGG = ITEMS.register("beaver_spawn_egg",
+            ()-> new ForgeSpawnEggItem(ModEntities.BEAVER, 10051392,3407872, new Item.Properties()));
+
 
 
     //Tools
