@@ -3,6 +3,7 @@ package net.justin.alexandritemod.entity;
 import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.entity.custom.BeaverEntity;
 import net.justin.alexandritemod.entity.custom.ChairEntity;
+import net.justin.alexandritemod.entity.custom.TomahawkProjectileEntity;
 import net.justin.alexandritemod.entity.custom.TriceratopsEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -26,6 +27,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<ChairEntity>> CHAIR =
             ENTITY_TYPE.register("chair_entity", () -> EntityType.Builder.of(ChairEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f).build("chair_entity"));
+
+    public static final RegistryObject<EntityType<TomahawkProjectileEntity>> TOMAHAWK =
+            ENTITY_TYPE.register("tomahawk", () -> EntityType.Builder.<TomahawkProjectileEntity>of(TomahawkProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 1.15f).build("tomahawk"));
 
 
 

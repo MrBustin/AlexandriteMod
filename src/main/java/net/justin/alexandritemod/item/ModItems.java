@@ -6,6 +6,7 @@ import net.justin.alexandritemod.entity.ModEntities;
 import net.justin.alexandritemod.item.custom.ChiselItem;
 import net.justin.alexandritemod.item.custom.HammerItem;
 import net.justin.alexandritemod.item.custom.ModArmorItem;
+import net.justin.alexandritemod.item.custom.TomahawkItem;
 import net.justin.alexandritemod.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -84,6 +85,9 @@ public class ModItems {
     //Bow
     public static final RegistryObject<Item> ALEXANDRITE_BOW = ITEMS.register("alexandrite_bow",
             ()-> new BowItem(new Item.Properties().durability(500)));
+
+    public static final RegistryObject<Item> TOMAHAWK = ITEMS.register("tomahawk",
+            ()-> new TomahawkItem(new Item.Properties().stacksTo(16)));
 
     //Music Discs
     public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISK = ITEMS.register("bar_brawl_music_disc",

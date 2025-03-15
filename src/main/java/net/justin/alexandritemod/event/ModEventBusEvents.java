@@ -4,6 +4,7 @@ package net.justin.alexandritemod.event;
 import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.entity.ModEntities;
 import net.justin.alexandritemod.entity.client.BeaverModel;
+import net.justin.alexandritemod.entity.client.TomahawkProjectileModel;
 import net.justin.alexandritemod.entity.client.TriceratopsModel;
 import net.justin.alexandritemod.entity.custom.BeaverEntity;
 import net.justin.alexandritemod.entity.custom.TriceratopsEntity;
@@ -22,6 +23,7 @@ public class ModEventBusEvents {
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event){
         event.registerLayerDefinition(TriceratopsModel.LAYER_LOCATION, TriceratopsModel::createBodyLayer);
         event.registerLayerDefinition(BeaverModel.LAYER_LOCATION, BeaverModel::createBodyLayer);
+        event.registerLayerDefinition(TomahawkProjectileModel.LAYER_LOCATION, TomahawkProjectileModel::createBodyLayer);
 
     }
 

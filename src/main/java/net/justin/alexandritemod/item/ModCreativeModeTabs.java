@@ -80,6 +80,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.TOOL_ROD.get());
                         output.accept(ModItems.CHISEL.get());
+                        output.accept(ModItems.TOMAHAWK.get());
                         output.accept(ModItems.TRICERATOPS_SPAWN_EGG.get());
                         output.accept(ModItems.BEAVER_SPAWN_EGG.get());
                         output.accept(ModItems.KOHLRABI.get());

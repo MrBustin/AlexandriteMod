@@ -8,6 +8,7 @@ import net.justin.alexandritemod.enchantment.ModEnchantmentEffects;
 import net.justin.alexandritemod.entity.ModEntities;
 import net.justin.alexandritemod.entity.client.BeaverRenderer;
 import net.justin.alexandritemod.entity.client.ChairRenderer;
+import net.justin.alexandritemod.entity.client.TomahawkProjectileRenderer;
 import net.justin.alexandritemod.entity.client.TriceratopsRenderer;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
 import net.justin.alexandritemod.item.ModItems;
@@ -128,6 +129,7 @@ public class AlexandriteMod {
             EntityRenderers.register(ModEntities.TRICERATOPS.get(), TriceratopsRenderer::new);
             EntityRenderers.register(ModEntities.BEAVER.get(), BeaverRenderer::new);
             EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
+            EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
         }
 
         @SubscribeEvent
