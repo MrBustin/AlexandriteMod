@@ -33,6 +33,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModBlocks.CHAMBER_FRAME.get())
+                        .pattern("AAA")
+                        .pattern("TST")
+                        .pattern("AAA")
+                        .define('A', ModBlocks.ALEXANDRITE_BLOCK.get())
+                        .define('T', ModItems.TOOL_ROD.get())
+                        .define('S', Items.NETHER_STAR);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModBlocks.GROWTH_CHAMBER.get())
+                        .pattern("BBB")
+                        .pattern("WDW")
+                        .pattern("BBB")
+                        .define('B', Blocks.BONE_BLOCK)
+                        .define('W', Items.WATER_BUCKET)
+                        .define('D', Items.DRAGON_EGG)
+        .unlockedBy(getHasName(ModBlocks.CHAMBER_FRAME.get()), has(ModBlocks.CHAMBER_FRAME.get())).save(pRecipeOutput);
+
+
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.TOOL_ROD.get())
                 .pattern("I")
                 .pattern("I")

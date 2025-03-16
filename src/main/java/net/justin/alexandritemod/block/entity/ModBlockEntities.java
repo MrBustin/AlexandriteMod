@@ -3,6 +3,7 @@ package net.justin.alexandritemod.block.entity;
 
 import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.block.ModBlocks;
+import net.justin.alexandritemod.block.entity.custom.GrowthChamberBlockEntity;
 import net.justin.alexandritemod.block.entity.custom.PedestalBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -19,6 +20,10 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<PedestalBlockEntity>> PEDESTAL_BE =
             BLOCK_ENTITIES.register("pedestal_be", ()-> BlockEntityType.Builder.of(
                     PedestalBlockEntity::new, ModBlocks.PEDESTAL.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<GrowthChamberBlockEntity>> GROWTH_CHAMBER_BE =
+            BLOCK_ENTITIES.register("growth_chamber_be", ()-> BlockEntityType.Builder.of(
+                    GrowthChamberBlockEntity::new, ModBlocks.GROWTH_CHAMBER.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> MOD_SIGN =
             BLOCK_ENTITIES.register("mod_sign", ()-> BlockEntityType.Builder.of(

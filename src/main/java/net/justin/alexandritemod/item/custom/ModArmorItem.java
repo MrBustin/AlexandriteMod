@@ -20,7 +20,7 @@ public class ModArmorItem extends ArmorItem {
             (new ImmutableMap.Builder<Holder<ArmorMaterial>, List<MobEffectInstance>>())
                     .put(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL,
                             List.of(new MobEffectInstance(MobEffects.ABSORPTION, 200, 1, false, false),
-                                    new MobEffectInstance(MobEffects.GLOWING, 200, 1, false, false)))
+                                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 1, false, false)))
                     .build();
 
     public ModArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties) {

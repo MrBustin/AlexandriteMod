@@ -28,7 +28,7 @@
   "item.alexandritemod.honey_berries": "Honey Berries",
   "item.alexandritemod.triceratops_spawn_egg": "Triceratops Spawn Egg",
   "item.alexandritemod.beaver_spawn_egg": "Beaver Spawn Egg",
-  "item.alexandritemod.tomahwak": "Tomahwak",
+  "item.alexandritemod.tomahawk": "Tomahwak",
 
 
 
@@ -81,6 +81,8 @@
   "block.alexandritemod.pedestal": "Pedestal",
   "block.alexandritemod.walnut_sign": "Walnut Sign",
   "block.alexandritemod.walnut_hanging_sign": "Walnut Hanging Sign",
+  "block.alexandritemod.growth_chamber": "Growth Chamber",
+  "block.alexandritemod.chamber_frame": "§dChamber Frame§r",
 
 
 

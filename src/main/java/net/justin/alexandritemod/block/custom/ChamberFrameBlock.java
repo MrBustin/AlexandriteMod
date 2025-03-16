@@ -12,13 +12,10 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
+public class ChamberFrameBlock extends HorizontalDirectionalBlock {
+    public static final MapCodec<ChamberFrameBlock> CODEC = simpleCodec(ChamberFrameBlock::new);
 
-public class TableBlock extends HorizontalDirectionalBlock {
-    public static final MapCodec<TableBlock> CODEC = simpleCodec(TableBlock::new);
-    public static final VoxelShape SHAPE = Block.box(0.0,0.0,0.0,16.0,13.0,16.0);
-
-    public TableBlock(Properties pProperties) {
+    public ChamberFrameBlock(Properties pProperties) {
         super(pProperties);
     }
 
@@ -29,10 +26,6 @@ public class TableBlock extends HorizontalDirectionalBlock {
         return CODEC;
     }
 
-    @Override
-    protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return SHAPE;
-    }
 
     @Nullable
     @Override

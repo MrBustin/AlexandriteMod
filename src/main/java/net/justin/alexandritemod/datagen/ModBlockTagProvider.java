@@ -66,7 +66,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ALEXANDRITE_FENCE_GATE.get())
                 .add(ModBlocks.ALEXANDRITE_DOOR.get())
                 .add(ModBlocks.ALEXANDRITE_TRAPDOOR.get())
-                .add(ModBlocks.PEDESTAL.get());
+                .add(ModBlocks.PEDESTAL.get())
+                .add(ModBlocks.GROWTH_CHAMBER.get())
+                .add(ModBlocks.CHAMBER_FRAME.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.ALEXANDRITE_DEEPSLATE_ORE.get())

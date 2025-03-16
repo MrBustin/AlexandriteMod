@@ -12,9 +12,12 @@ import net.justin.alexandritemod.entity.client.TomahawkProjectileRenderer;
 import net.justin.alexandritemod.entity.client.TriceratopsRenderer;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
 import net.justin.alexandritemod.item.ModItems;
+import net.justin.alexandritemod.screen.ModMenuTypes;
+import net.justin.alexandritemod.screen.custom.GrowthChamberScreen;
 import net.justin.alexandritemod.sound.ModSounds;
 import net.justin.alexandritemod.util.ModItemProperties;
 import net.justin.alexandritemod.util.ModWoodTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTab;
@@ -61,6 +64,8 @@ public class AlexandriteMod {
         ModEntities.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
 
 
 
@@ -130,6 +135,7 @@ public class AlexandriteMod {
             EntityRenderers.register(ModEntities.BEAVER.get(), BeaverRenderer::new);
             EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
+            MenuScreens.register(ModMenuTypes.GROWTH_CHAMBER_MENU.get(), GrowthChamberScreen::new);
         }
 
         @SubscribeEvent
