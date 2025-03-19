@@ -1,0 +1,10 @@
+{
+  "type": "alexandritemod:growth_chamber",
+  "ingredient": {
+    "item": "alexandritemod:raw_alexandrite"
+  },
+  "result": {
+    "id": "alexandritemod:alexandrite",
+    "count": 2
+  }
+}

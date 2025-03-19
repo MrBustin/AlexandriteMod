@@ -2,6 +2,9 @@ package net.justin.alexandritemod.block.entity.custom;
 
 import net.justin.alexandritemod.block.entity.ModBlockEntities;
 import net.justin.alexandritemod.item.ModItems;
+import net.justin.alexandritemod.recipe.GrowthChamberRecipe;
+import net.justin.alexandritemod.recipe.GrowthChamberRecipeInput;
+import net.justin.alexandritemod.recipe.ModRecipes;
 import net.justin.alexandritemod.screen.custom.GrowthChamberMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -20,6 +23,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -29,6 +33,8 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
@@ -147,7 +153,8 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private void craftItem() {
-        ItemStack output = new ItemStack(ModItems.ALEXANDRITE.get());
+        Optional<RecipeHolder<GrowthChamberRecipe>> recipe = getCurrentRecipe();
+        ItemStack output = recipe.get().value().output();
 
         itemHandler.extractItem(INPUT_SLOT, 1, false);
         itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
@@ -165,11 +172,18 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
 
     //CHANGE LATER
     private boolean hasRecipe() {
-        Item input = ModItems.RAW_ALEXANDRITE.get();
-        ItemStack output = new ItemStack(ModItems.ALEXANDRITE.get()); //ItemStack(ModItems.ALEXANDRITE.get(),2);
+        Optional<RecipeHolder<GrowthChamberRecipe>> recipe = getCurrentRecipe();
+        if(recipe.isEmpty()){
+            return false;
+        }
+        
+        ItemStack output = recipe.get().value().output();
+        return canInsertItemIntoOutputSlot(output) && canInsertAmountIntoOutputSlot(output.getCount());
+    }
 
-        return itemHandler.getStackInSlot(INPUT_SLOT).is(input) && canInsertItemIntoOutputSlot(output)
-                && canInsertAmountIntoOutputSlot(output.getCount());
+    private Optional<RecipeHolder<GrowthChamberRecipe>> getCurrentRecipe() {
+        return this.level.getRecipeManager()
+                .getRecipeFor(ModRecipes.GROWTH_CHAMBER_TYPE.get(), new GrowthChamberRecipeInput(itemHandler.getStackInSlot(INPUT_SLOT)),level);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {

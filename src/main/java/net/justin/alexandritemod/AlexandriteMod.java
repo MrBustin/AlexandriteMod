@@ -12,6 +12,7 @@ import net.justin.alexandritemod.entity.client.TomahawkProjectileRenderer;
 import net.justin.alexandritemod.entity.client.TriceratopsRenderer;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
 import net.justin.alexandritemod.item.ModItems;
+import net.justin.alexandritemod.recipe.ModRecipes;
 import net.justin.alexandritemod.screen.ModMenuTypes;
 import net.justin.alexandritemod.screen.custom.GrowthChamberScreen;
 import net.justin.alexandritemod.sound.ModSounds;
@@ -66,6 +67,7 @@ public class AlexandriteMod {
         ModBlockEntities.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
 
 

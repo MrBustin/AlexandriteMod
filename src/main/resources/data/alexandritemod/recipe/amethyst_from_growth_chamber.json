@@ -1,0 +1,10 @@
+{
+  "type": "alexandritemod:growth_chamber",
+  "ingredient": {
+    "item": "minecraft:amethyst_cluster"
+  },
+  "result": {
+    "id": "minecraft:amethyst_cluster",
+    "count": 2
+  }
+}
