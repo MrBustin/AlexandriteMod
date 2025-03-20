@@ -96,10 +96,9 @@ public class AlexandriteMod {
         }
 
 
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.ALEXANDRITE_BLOCK);
-            event.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK);
-        }
+       // if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+
+       // }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.BAR_BRAWL_MUSIC_DISK);

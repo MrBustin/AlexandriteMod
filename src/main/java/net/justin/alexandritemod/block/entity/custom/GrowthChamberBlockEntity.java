@@ -7,16 +7,14 @@ import net.justin.alexandritemod.recipe.GrowthChamberRecipeInput;
 import net.justin.alexandritemod.recipe.ModRecipes;
 import net.justin.alexandritemod.screen.custom.GrowthChamberMenu;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.Container;
-import net.minecraft.world.Containers;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -176,7 +174,7 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
         if(recipe.isEmpty()){
             return false;
         }
-        
+
         ItemStack output = recipe.get().value().output();
         return canInsertItemIntoOutputSlot(output) && canInsertAmountIntoOutputSlot(output.getCount());
     }
@@ -207,4 +205,6 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
     public Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
     }
+
+
 }

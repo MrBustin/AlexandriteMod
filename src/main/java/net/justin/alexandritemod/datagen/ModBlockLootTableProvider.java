@@ -60,6 +60,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PEDESTAL.get());
         dropSelf(ModBlocks.GROWTH_CHAMBER.get());
         dropSelf(ModBlocks.CHAMBER_FRAME.get());
+        dropSelf(ModBlocks.ALEXANDRITE_FURNACE.get());
 
         this.add(ModBlocks.ALEXANDRITE_DOOR.get(),
                 block -> createDoorTable(ModBlocks.ALEXANDRITE_DOOR.get()));

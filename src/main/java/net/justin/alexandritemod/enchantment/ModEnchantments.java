@@ -2,7 +2,6 @@ package net.justin.alexandritemod.enchantment;
 
 import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.enchantment.custom.LightningStrikerEnchantmentEffect;
-import net.justin.alexandritemod.enchantment.custom.LightningStrikerEnchantmentEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;

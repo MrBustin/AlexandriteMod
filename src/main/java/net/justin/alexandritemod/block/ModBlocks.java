@@ -57,6 +57,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> GROWTH_CHAMBER = registerBlock("growth_chamber",
             ()-> new GrowthChamberBlock(BlockBehaviour.Properties.of().strength(4f)));
 
+    public static final RegistryObject<Block> ALEXANDRITE_FURNACE = registerBlock("alexandrite_furnace",
+            ()-> new AlexandriteFurnaceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLAST_FURNACE)));
+
     public static final RegistryObject<Block> CHAMBER_FRAME = registerBlock("chamber_frame",
             () -> new ChamberFrameBlock(BlockBehaviour.Properties.of()
                     .strength(50f,1200f).sound(SoundType.METAL).noOcclusion().instrument(NoteBlockInstrument.DIDGERIDOO)));
