@@ -26,15 +26,22 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvider {
+public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvider{
+
+    private static final int INPUT_SLOT = 0;
+    private static final int OUTPUT_SLOT = 1;
+
     public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -45,8 +52,7 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
         }
     };
 
-    private static final int INPUT_SLOT = 0;
-    private static final int OUTPUT_SLOT = 1;
+    private final LazyOptional<IItemHandler> hopperCapability = LazyOptional.of(() -> itemHandler);
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -91,6 +97,8 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
     public void invalidateCaps() {
         super.invalidateCaps();
         lazyItemHandler.invalidate();
+        inputHandler.invalidate();
+        outputHandler.invalidate();
     }
 
     public void drops() {
@@ -168,7 +176,6 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
     }
 
 
-    //CHANGE LATER
     private boolean hasRecipe() {
         Optional<RecipeHolder<GrowthChamberRecipe>> recipe = getCurrentRecipe();
         if(recipe.isEmpty()){
@@ -204,6 +211,84 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
     @Override
     public Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    // Handler that only allows insertion into INPUT_SLOT
+    private final LazyOptional<IItemHandler> inputHandler = LazyOptional.of(() -> new IItemHandler() {
+        @Override
+        public int getSlots() {
+            return 1;
+        }
+
+        @Override
+        public @NotNull ItemStack getStackInSlot(int slot) {
+            return itemHandler.getStackInSlot(INPUT_SLOT);
+        }
+
+        @Override
+        public @NotNull ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
+            return itemHandler.insertItem(INPUT_SLOT, stack, simulate);
+        }
+
+        @Override
+        public @NotNull ItemStack extractItem(int slot, int amount, boolean simulate) {
+            return ItemStack.EMPTY; // Prevent extraction from input slot
+        }
+
+        @Override
+        public int getSlotLimit(int slot) {
+            return itemHandler.getSlotLimit(INPUT_SLOT);
+        }
+
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            return itemHandler.isItemValid(INPUT_SLOT, stack);
+        }
+    });
+
+    // Handler that only allows extraction from OUTPUT_SLOT
+    private final LazyOptional<IItemHandler> outputHandler = LazyOptional.of(() -> new IItemHandler() {
+        @Override
+        public int getSlots() {
+            return 1;
+        }
+
+        @Override
+        public @NotNull ItemStack getStackInSlot(int slot) {
+            return itemHandler.getStackInSlot(OUTPUT_SLOT);
+        }
+
+        @Override
+        public @NotNull ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
+            return stack; // Prevent inserting into output slot
+        }
+
+        @Override
+        public @NotNull ItemStack extractItem(int slot, int amount, boolean simulate) {
+            return itemHandler.extractItem(OUTPUT_SLOT, amount, simulate);
+        }
+
+        @Override
+        public int getSlotLimit(int slot) {
+            return itemHandler.getSlotLimit(OUTPUT_SLOT);
+        }
+
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            return false; // Prevent inserting into output slot
+        }
+    });
+
+    @Override
+    public <T> @NotNull LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
+        if (cap == ForgeCapabilities.ITEM_HANDLER) {
+            if (side == Direction.DOWN) {
+                return outputHandler.cast(); // Only extract from output slot
+            } else {
+                return inputHandler.cast(); // Only insert into input slot
+            }
+        }
+        return super.getCapability(cap, side);
     }
 
 

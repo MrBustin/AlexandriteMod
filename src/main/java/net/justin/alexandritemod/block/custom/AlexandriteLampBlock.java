@@ -29,9 +29,12 @@ public class AlexandriteLampBlock extends Block {
     protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult){
 
 
+
         if(!pLevel.isClientSide()){
             boolean currentState = pState.getValue(CLICKED);
             pLevel.setBlockAndUpdate(pPos,pState.setValue(CLICKED,!currentState));
+            pLevel.playSound(null, pPos, currentState ? SoundEvents.COPPER_BULB_TURN_ON : SoundEvents.COPPER_BULB_TURN_OFF, SoundSource.BLOCKS);
+
         }
 
 
@@ -40,4 +43,5 @@ public class AlexandriteLampBlock extends Block {
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder){
         pBuilder.add(CLICKED);
     }
+
 }

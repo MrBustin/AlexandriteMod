@@ -45,8 +45,11 @@ public class ModBlocks {
                     .strength(4f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> ALEXANDRITE_LAMP = registerBlock("alexandrite_lamp",
-            ()-> new AlexandriteLampBlock(BlockBehaviour.Properties.of().strength(3f)
+            ()-> new AlexandriteLampBlock(BlockBehaviour.Properties.of().strength(3f).sound(SoundType.COPPER_BULB)
                     .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED) ? 15 : 0)));
+
+    public static final RegistryObject<Block> DIGITAL_DISPLAY_BLOCK = registerBlock("digital_display_block",
+            ()-> new DigitalDisplayBlock(BlockBehaviour.Properties.of().strength(3f).sound(SoundType.COPPER_BULB)));
 
     public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
             () -> new MagicBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().sound(ModSounds.MAGIC_BLOCK_SOUNDS)));

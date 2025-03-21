@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "alexandritemod:block/digital_display_9",
+    "front": "alexandritemod:block/digital_display_9",
+    "top": "minecraft:block/hopper_inside"
+  }
+}
