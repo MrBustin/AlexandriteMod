@@ -2,6 +2,7 @@ package net.justin.alexandritemod.entity.custom;
 
 import net.justin.alexandritemod.entity.ModEntities;
 import net.justin.alexandritemod.item.ModItems;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -26,6 +27,8 @@ public class BeaverEntity extends Animal {
     public final AnimationState idleAnimationState = new AnimationState();
     public final AnimationState shakeAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+    private boolean wasInWater = false;
+    private int dryOffTicks = 0; // Timer for the animation
 
 
     public BeaverEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
@@ -79,6 +82,44 @@ public class BeaverEntity extends Animal {
 
         if(this.level().isClientSide()){
             this.setupAnimationStates();
+        }
+        boolean isInWaterNow = this.isInWater();
+
+        // Check if the beaver was in water but now is not
+        if (wasInWater && !isInWaterNow && !this.isInWaterRainOrBubble()) {
+            playDryOffAnimation();
+        }
+
+        // Update tracking variable ONLY if actually in water
+        wasInWater = isInWaterNow;
+
+        // Decrease dry-off timer
+        if (dryOffTicks > 0) {
+            dryOffTicks--;
+        }
+
+    }
+
+    private void playDryOffAnimation() {
+        this.dryOffTicks = 40; // Adjust animation duration as needed
+        this.shakeAnimationState.start(this.tickCount);
+
+        if (this.level().isClientSide()) {
+            spawnWaterParticles(); // Spawn water droplets
+        }// Trigger shake animation
+    }
+
+    private void spawnWaterParticles() {
+        for (int i = 0; i < 20; i++) { // Spawn multiple particles
+            double offsetX = (this.random.nextDouble() - 0.5) * this.getBbWidth(); // Spread around entity
+            double offsetY = this.random.nextDouble() * this.getBbHeight(); // Spread upwards
+            double offsetZ = (this.random.nextDouble() - 0.5) * this.getBbWidth();
+
+            this.level().addParticle(ParticleTypes.SPLASH,
+                    this.getX() + offsetX,
+                    this.getY() + offsetY,
+                    this.getZ() + offsetZ,
+                    0, 0.2, 0); // Slight upward motion
         }
     }
 

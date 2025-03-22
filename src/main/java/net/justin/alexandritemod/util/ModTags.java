@@ -25,6 +25,7 @@ public class ModTags {
     public static class Items{
 
         public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
+        public static final TagKey<Item> CROPS = createTag("crops");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(AlexandriteMod.MOD_ID, name));

@@ -14,6 +14,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -21,8 +22,10 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,8 +44,9 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
 
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
+    private static final int BONEMEAL_SLOT = 2;
 
-    public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -50,9 +54,21 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
         }
+
+        @Override
+        public boolean isItemValid(int slot, ItemStack stack) {
+            if (slot == BONEMEAL_SLOT) {
+                return stack.getItem() == Items.BONE_MEAL; // Only bonemeal allowed
+            }
+            if (slot == OUTPUT_SLOT) {
+                return false; // Prevent manual insertion into output slot
+            }
+            return true; // Allow any item in the input slot
+        }
     };
 
-    private final LazyOptional<IItemHandler> hopperCapability = LazyOptional.of(() -> itemHandler);
+
+
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -140,20 +156,45 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
-        if(hasRecipe()) {
-            increaseCraftingProgress();
-            setChanged(level, blockPos, blockState);
-
+        if (hasRecipe()) {
             if (hasCraftingFinished()) {
                 craftItem();
                 resetProgress();
+            } else {
+                increaseCraftingProgress();
+                setChanged(level, blockPos, blockState);
             }
         } else {
             resetProgress();
         }
+
+        if (hasCropRecipe()){
+            if (hasCropGrowingFinished()) {
+                craftItem();
+                resetProgress();
+            } else {
+                increaseCraftingProgress();
+                setChanged(level, blockPos, blockState);
+            }
+        }else{
+            resetProgress();
+        }
     }
 
+
+
     private void resetProgress() {
+        // Only proceed if the recipe is a crop recipe and there's bonemeal in the slot
+        if (hasCropRecipe()) {
+            if (itemHandler.getStackInSlot(BONEMEAL_SLOT).getItem() == Items.BONE_MEAL) {
+                if (hasCropGrowingFinished()) {
+                    // Consume the bonemeal only when the crop has finished growing
+                    itemHandler.extractItem(BONEMEAL_SLOT, 1, false);
+                }
+            }
+        }
+
+        // Reset progress
         this.progress = 0;
         this.maxProgress = 72;
     }
@@ -167,13 +208,56 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
                 itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
     }
 
+
     private boolean hasCraftingFinished() {
         return this.progress >= this.maxProgress;
     }
 
-    private void increaseCraftingProgress() {
-        progress++;
+    private boolean hasCropGrowingFinished() {
+        return this.progress >= this.maxProgress;
     }
+
+    private void increaseCraftingProgress() {
+
+        boolean hasBoneBlockBelow = level.getBlockState(this.worldPosition.below()).is(Blocks.BONE_BLOCK);
+        if (hasCropRecipe() && itemHandler.getStackInSlot(BONEMEAL_SLOT).getItem() == Items.BONE_MEAL) {
+            progress += hasBoneBlockBelow ? 4 : 1; // Double progress if Bone Block is present
+        } else {
+            progress+= hasBoneBlockBelow ? 4 : 1; // Double progress if Bone Block is present
+        }
+    }
+
+    private boolean hasCropRecipe(){
+        Optional<RecipeHolder<GrowthChamberRecipe>> recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty()) {
+            return false;
+        }
+
+        GrowthChamberRecipe currentRecipe = recipe.get().value();
+        ItemStack inputStack = itemHandler.getStackInSlot(INPUT_SLOT);
+
+        // Check if the recipe is a crop type (adjust condition as needed)
+        boolean isCrop = isCropRecipe(currentRecipe);
+
+        // Ensure bonemeal is present if needed
+        boolean hasBonemeal = itemHandler.getStackInSlot(BONEMEAL_SLOT).getItem() == Items.BONE_MEAL;
+
+        if (isCrop && !hasBonemeal) {
+            return false; // Crop recipes need bonemeal
+        }
+
+        ItemStack output = currentRecipe.output();
+        return canInsertItemIntoOutputSlot(output) && canInsertAmountIntoOutputSlot(output.getCount());
+    }
+
+    private boolean isCropRecipe(GrowthChamberRecipe recipe) {
+        // Example check: if the output is a crop, consider it a crop recipe
+        Item outputItem = recipe.output().getItem();
+
+        return outputItem == Items.WHEAT || outputItem == Items.CARROT || outputItem == Items.POTATO || outputItem == Items.BEETROOT;
+    }
+
 
 
     private boolean hasRecipe() {
@@ -246,6 +330,39 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
         }
     });
 
+    // Handler that only allows bonemeal insertion into BONEMEAL_SLOT
+    private final LazyOptional<IItemHandler> bonemealHandler = LazyOptional.of(() -> new IItemHandler() {
+        @Override
+        public int getSlots() {
+            return 1;
+        }
+
+        @Override
+        public @NotNull ItemStack getStackInSlot(int slot) {
+            return itemHandler.getStackInSlot(BONEMEAL_SLOT);
+        }
+
+        @Override
+        public @NotNull ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
+            return stack.getItem() == Items.BONE_MEAL ? itemHandler.insertItem(BONEMEAL_SLOT, stack, simulate) : stack;
+        }
+
+        @Override
+        public @NotNull ItemStack extractItem(int slot, int amount, boolean simulate) {
+            return ItemStack.EMPTY; // Prevent extraction from bonemeal slot
+        }
+
+        @Override
+        public int getSlotLimit(int slot) {
+            return itemHandler.getSlotLimit(BONEMEAL_SLOT);
+        }
+
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            return stack.getItem() == Items.BONE_MEAL; // Only allow bonemeal
+        }
+    });
+
     // Handler that only allows extraction from OUTPUT_SLOT
     private final LazyOptional<IItemHandler> outputHandler = LazyOptional.of(() -> new IItemHandler() {
         @Override
@@ -283,9 +400,11 @@ public class GrowthChamberBlockEntity extends BlockEntity implements MenuProvide
     public <T> @NotNull LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
             if (side == Direction.DOWN) {
-                return outputHandler.cast(); // Only extract from output slot
+                return outputHandler.cast(); // Only allow extraction from output
+            } else if (side == Direction.UP) {
+                return inputHandler.cast(); // Insert items into input slot from the top
             } else {
-                return inputHandler.cast(); // Only insert into input slot
+                return bonemealHandler.cast(); // Allow bonemeal input from the sides
             }
         }
         return super.getCapability(cap, side);

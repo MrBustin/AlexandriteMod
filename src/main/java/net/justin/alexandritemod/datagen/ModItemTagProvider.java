@@ -44,5 +44,21 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.PLANKS)
                 .add(ModBlocks.WALNUT_PLANKS.get().asItem());
 
+        tag(ItemTags.BEACON_PAYMENT_ITEMS)
+                .add(ModItems.ALEXANDRITE.get());
+
+        tag(ModTags.Items.CROPS)
+                .add(ModItems.KOHLRABI.get())
+                .add(ModItems.STRAWBERRY.get())
+                .add(ModItems.BLUEBERRY.get())
+                .add(ModItems.HONEY_BERRIES.get())
+                .add(Items.WHEAT)
+                .add(Items.CARROT)
+                .add(Items.BEETROOT)
+                .add(Items.POTATO)
+                .add(Items.SWEET_BERRIES)
+                .add(Items.CACTUS)
+                .add(Items.SUGAR_CANE);
+
     }
 }

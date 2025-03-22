@@ -49,6 +49,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRIMSON_TABLE.get())
                 .add(ModBlocks.WARPED_TABLE.get());
 
+        tag(BlockTags.BEACON_BASE_BLOCKS)
+                .add(ModBlocks.ALEXANDRITE_BLOCK.get());
+
 
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)

@@ -31,6 +31,7 @@ public class GrowthChamberScreen extends AbstractContainerScreen<GrowthChamberMe
         pGuiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
         renderProgressArrow(pGuiGraphics, x, y);
+        renderBonemealSlot(pGuiGraphics, x, y);
     }
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
@@ -43,5 +44,10 @@ public class GrowthChamberScreen extends AbstractContainerScreen<GrowthChamberMe
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float delta) {
         super.render(guiGraphics, mouseX, mouseY, delta);
         renderTooltip(guiGraphics, mouseX, mouseY);
+    }
+
+    private void renderBonemealSlot(GuiGraphics guiGraphics, int x, int y) {
+        // Render bonemeal slot background, icon, or any special UI elements if needed.
+        guiGraphics.blit(GUI_TEXTURE, x + 54, y + 54, 176, 0, 18, 18); // Adjust texture position as needed
     }
 }

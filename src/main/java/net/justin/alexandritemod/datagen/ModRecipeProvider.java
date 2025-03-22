@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.BlockTypes;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.fml.common.Mod;
@@ -33,22 +34,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModBlocks.CHAMBER_FRAME.get())
-                        .pattern("AAA")
-                        .pattern("TST")
-                        .pattern("AAA")
-                        .define('A', ModBlocks.ALEXANDRITE_BLOCK.get())
-                        .define('T', ModItems.TOOL_ROD.get())
-                        .define('S', Items.NETHER_STAR);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModBlocks.DIGITAL_DISPLAY_BLOCK.get())
+                .pattern("IRI")
+                .pattern("RLR")
+                .pattern("IRI")
+                .define('L', Blocks.REDSTONE_LAMP)
+                .define('R', Items.REDSTONE)
+                .define('I', Items.IRON_INGOT)
+                .unlockedBy(getHasName(ModBlocks.ALEXANDRITE_BLOCK.get()), has(ModBlocks.ALEXANDRITE_BLOCK.get())).save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModBlocks.GROWTH_CHAMBER.get())
+                        .pattern("GRG")
+                        .pattern("RSR")
                         .pattern("BBB")
-                        .pattern("WDW")
-                        .pattern("BBB")
-                        .define('B', Blocks.BONE_BLOCK)
-                        .define('W', Items.WATER_BUCKET)
-                        .define('D', Items.DRAGON_EGG)
-        .unlockedBy(getHasName(ModBlocks.CHAMBER_FRAME.get()), has(ModBlocks.CHAMBER_FRAME.get())).save(pRecipeOutput);
+                        .define('B', ModBlocks.ALEXANDRITE_BLOCK.get())
+                        .define('R', Blocks.REDSTONE_BLOCK)
+                        .define('S', Items.NETHER_STAR)
+                        .define('G', Blocks.GLASS)
+        .unlockedBy(getHasName(ModBlocks.ALEXANDRITE_BLOCK.get()), has(ModBlocks.ALEXANDRITE_BLOCK.get())).save(pRecipeOutput);
 
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.TOOL_ROD.get())

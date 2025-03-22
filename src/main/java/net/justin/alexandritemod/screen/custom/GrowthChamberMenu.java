@@ -8,6 +8,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.SlotItemHandler;
@@ -30,8 +31,23 @@ public class GrowthChamberMenu extends AbstractContainerMenu {
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 0, 54, 34));
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 1, 104, 34));
+        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 0, 54, 34));// Input slot
+
+        // Output slot (only allows extraction, no manual insertion)
+        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 1, 104, 34) {
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return false; // Prevent players from inserting into the output slot
+            }
+        });
+
+        // Bonemeal slot (only allows bonemeal)
+        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 2, 54, 55) {
+            @Override
+            public boolean mayPlace(ItemStack stack) {
+                return stack.getItem() == Items.BONE_MEAL; // Only bonemeal allowed
+            }
+        });
 
         addDataSlots(data);
     }
@@ -64,7 +80,7 @@ public class GrowthChamberMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 2;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);

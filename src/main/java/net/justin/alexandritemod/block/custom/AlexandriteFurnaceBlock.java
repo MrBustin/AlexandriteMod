@@ -34,11 +34,6 @@ public class AlexandriteFurnaceBlock extends AbstractFurnaceBlock {
         return new AlexandriteFurnaceBlockEntity(pPos, pState);
     }
 
-    @Nullable
-    @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        return createFurnaceTicker(pLevel, pBlockEntityType, ModBlockEntities.ALEXANDRITE_FURNACE_BE.get());
-    }
 
 
 
@@ -69,6 +64,11 @@ public class AlexandriteFurnaceBlock extends AbstractFurnaceBlock {
             double d7 = direction$axis == Direction.Axis.Z ? (double)direction.getStepZ() * 0.52 : d4;
             pLevel.addParticle(ParticleTypes.SMOKE, d0 + d5, d1 + d6, d2 + d7, 0.0, 0.0, 0.0);
         }
+    }
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+        return createFurnaceTicker(pLevel, pBlockEntityType, ModBlockEntities.ALEXANDRITE_FURNACE_BE.get());
     }
 
 
