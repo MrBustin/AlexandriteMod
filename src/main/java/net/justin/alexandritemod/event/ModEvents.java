@@ -3,6 +3,7 @@ package net.justin.alexandritemod.event;
 
 import net.justin.alexandritemod.AlexandriteMod;
 import net.justin.alexandritemod.item.custom.HammerItem;
+import net.justin.alexandritemod.network.PacketHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -40,5 +42,12 @@ public class ModEvents {
                 HARVESTED_BLOCKS.remove(pos);
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void commonSetup(FMLCommonSetupEvent event) {
+        event.enqueueWork(()-> {
+            PacketHandler.register();
+        });
     }
 }

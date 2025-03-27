@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import net.justin.alexandritemod.block.ModBlocks;
 import net.justin.alexandritemod.block.entity.ModBlockEntities;
 import net.justin.alexandritemod.block.entity.renderer.PedestalBlockEntityRenderer;
+import net.justin.alexandritemod.block.entity.renderer.TransmogTableBlockRenderer;
+import net.justin.alexandritemod.common.ModTransmogs;
 import net.justin.alexandritemod.enchantment.ModEnchantmentEffects;
 import net.justin.alexandritemod.entity.ModEntities;
 import net.justin.alexandritemod.entity.client.BeaverRenderer;
@@ -12,9 +14,11 @@ import net.justin.alexandritemod.entity.client.TomahawkProjectileRenderer;
 import net.justin.alexandritemod.entity.client.TriceratopsRenderer;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
 import net.justin.alexandritemod.item.ModItems;
+import net.justin.alexandritemod.network.PacketHandler;
 import net.justin.alexandritemod.recipe.ModRecipes;
 import net.justin.alexandritemod.screen.ModMenuTypes;
 import net.justin.alexandritemod.screen.custom.GrowthChamberScreen;
+import net.justin.alexandritemod.screen.custom.TransmogTableScreen;
 import net.justin.alexandritemod.sound.ModSounds;
 import net.justin.alexandritemod.util.ModItemProperties;
 import net.justin.alexandritemod.util.ModWoodTypes;
@@ -85,6 +89,10 @@ public class AlexandriteMod {
             ComposterBlock.COMPOSTABLES.put(ModItems.KOHLRABI_SEEDS.get(), 0.3f);
         });
 
+            event.enqueueWork(ModTransmogs::registerAll);
+        PacketHandler.register();
+
+
     }
 
     // Add the example block item to the building blocks tab
@@ -127,6 +135,7 @@ public class AlexandriteMod {
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
             Sheets.addWoodType(ModWoodTypes.WALNUT);
 
             ModItemProperties.addCustomItemProperties();
@@ -136,11 +145,13 @@ public class AlexandriteMod {
             EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
             MenuScreens.register(ModMenuTypes.GROWTH_CHAMBER_MENU.get(), GrowthChamberScreen::new);
+            MenuScreens.register(ModMenuTypes.TRANSMOG_TABLE_MENU.get(), TransmogTableScreen::new);
         }
 
         @SubscribeEvent
         public static void registerBER(EntityRenderersEvent.RegisterRenderers event){
             event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.TRANSMOG_BE.get(), TransmogTableBlockRenderer::new);
 
         }
     }

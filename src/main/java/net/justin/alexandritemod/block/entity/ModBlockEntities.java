@@ -8,6 +8,7 @@ import net.justin.alexandritemod.block.custom.AlexandriteFurnaceBlock;
 import net.justin.alexandritemod.block.entity.custom.AlexandriteFurnaceBlockEntity;
 import net.justin.alexandritemod.block.entity.custom.GrowthChamberBlockEntity;
 import net.justin.alexandritemod.block.entity.custom.PedestalBlockEntity;
+import net.justin.alexandritemod.block.entity.custom.TransmogTableBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,6 +24,10 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<PedestalBlockEntity>> PEDESTAL_BE =
             BLOCK_ENTITIES.register("pedestal_be", ()-> BlockEntityType.Builder.of(
                     PedestalBlockEntity::new, ModBlocks.PEDESTAL.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<TransmogTableBlockEntity>> TRANSMOG_BE =
+            BLOCK_ENTITIES.register("transmog_be", ()-> BlockEntityType.Builder.of(
+                    TransmogTableBlockEntity::new, ModBlocks.TRANSMOG_TABLE_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<GrowthChamberBlockEntity>> GROWTH_CHAMBER_BE =
             BLOCK_ENTITIES.register("growth_chamber_be", ()-> BlockEntityType.Builder.of(

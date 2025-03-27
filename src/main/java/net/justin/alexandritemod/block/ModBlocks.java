@@ -67,6 +67,9 @@ public class ModBlocks {
             () -> new ChamberFrameBlock(BlockBehaviour.Properties.of()
                     .strength(50f,1200f).sound(SoundType.METAL).noOcclusion().instrument(NoteBlockInstrument.DIDGERIDOO)));
 
+    public static final RegistryObject<Block> TRANSMOG_TABLE_BLOCK = registerBlock("transmog_table",
+            () -> new TransmogTableBlock(BlockBehaviour.Properties.of().strength(4f).noOcclusion()));
+
 
     // Ores
     public static final RegistryObject<Block> ALEXANDRITE_ORE = registerBlock("alexandrite_ore",

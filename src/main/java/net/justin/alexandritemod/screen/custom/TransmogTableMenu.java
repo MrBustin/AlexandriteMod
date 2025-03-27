@@ -1,67 +1,75 @@
 package net.justin.alexandritemod.screen.custom;
 
 import net.justin.alexandritemod.block.ModBlocks;
-import net.justin.alexandritemod.block.entity.custom.GrowthChamberBlockEntity;
+import net.justin.alexandritemod.block.entity.custom.TransmogTableBlockEntity;
+import net.justin.alexandritemod.common.TransmogRegistry;
 import net.justin.alexandritemod.screen.ModMenuTypes;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class GrowthChamberMenu extends AbstractContainerMenu {
-    public final GrowthChamberBlockEntity blockEntity;
+import java.util.Collections;
+import java.util.List;
+
+public class TransmogTableMenu extends AbstractContainerMenu {
+    public final TransmogTableBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public GrowthChamberMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+public static int ITEM_SLOT = 0;
+
+
+    public TransmogTableMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()));
     }
 
-    public GrowthChamberMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(ModMenuTypes.GROWTH_CHAMBER_MENU.get(), pContainerId);
-        this.blockEntity = ((GrowthChamberBlockEntity) entity);
+    public TransmogTableMenu(int pContainerId, Inventory inv, BlockEntity blockEntity) {
+        super(ModMenuTypes.TRANSMOG_TABLE_MENU.get(), pContainerId);
+        this.blockEntity = ((TransmogTableBlockEntity) blockEntity);
         this.level = inv.player.level();
-        this.data = data;
+        this.data = new SimpleContainerData(1);
+
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 0, 54, 34));// Input slot
 
-        // Output slot (only allows extraction, no manual insertion)
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 1, 104, 34) {
+        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, ITEM_SLOT, 7, 35) {
             @Override
             public boolean mayPlace(ItemStack stack) {
-                return false; // Prevent players from inserting into the output slot
+                return stack.getItem() instanceof SwordItem || stack.getItem() instanceof PickaxeItem ||
+                        stack.getItem() instanceof BowItem ||
+                        stack.getItem() instanceof CrossbowItem || stack.getItem() instanceof ArmorItem;
             }
         });
 
-        // Bonemeal slot (only allows bonemeal)
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 2, 54, 55) {
-            @Override
-            public boolean mayPlace(ItemStack stack) {
-                return stack.getItem() == Items.BONE_MEAL; // Only bonemeal allowed
-            }
-        });
+        addDataSlots(this.data);
 
-        addDataSlots(data);
     }
 
-    public boolean isCrafting() {
-        return data.get(0) > 0;
+    public List<ResourceLocation> getAvailableTransmogs() {
+        ItemStack stack = blockEntity.inventory.getStackInSlot(0);
+        if (stack.isEmpty()) return Collections.emptyList();
+
+
+
+        // Example: Fetch available transmogs based on the item type
+        return TransmogRegistry.getTransmogsForItem(stack.getItem());
     }
 
-    public int getScaledArrowProgress() {
-        int progress = this.data.get(0);
-        int maxProgress = this.data.get(1);
-        int arrowPixelSize = 24;
-
-        return maxProgress != 0 && progress != 0 ? progress * arrowPixelSize / maxProgress : 0;
+    public ItemStack getTransmogItem() {
+        ItemStack TransmogItem = blockEntity.inventory.getStackInSlot(0);
+        return TransmogItem;
     }
+
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
     // must assign a slot number to each of the slots used by the GUI.
@@ -79,7 +87,8 @@ public class GrowthChamberMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 1;  // must be the number of slots you have!
+
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -113,10 +122,11 @@ public class GrowthChamberMenu extends AbstractContainerMenu {
         return copyOfSourceStack;
     }
 
+
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, ModBlocks.GROWTH_CHAMBER.get());
+                pPlayer, ModBlocks.TRANSMOG_TABLE_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
@@ -131,5 +141,24 @@ public class GrowthChamberMenu extends AbstractContainerMenu {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
+    }
+
+    @Override
+    public void broadcastChanges() {
+        super.broadcastChanges();
+
+        // Whenever there is a change in the inventory, trigger the UI update.
+        // Here you can also check if the item has changed, and update the screen accordingly.
+        if (blockEntity.inventory.getStackInSlot(0) != null) {
+            // Force the screen to update (like adding or removing an item from the slot).
+            TransmogTableScreen screen = (TransmogTableScreen) Minecraft.getInstance().screen;
+            if (screen != null) {
+                screen.init();  // Refresh the screen with updated inventory
+            }
+        }
+    }
+
+    public TransmogTableBlockEntity getBlockEntity(){
+        return blockEntity;
     }
 }
