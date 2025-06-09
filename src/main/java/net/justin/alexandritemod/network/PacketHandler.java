@@ -17,18 +17,21 @@ public class PacketHandler {
             .simpleChannel();
 
     public static void register() {
+        INSTANCE.messageBuilder(ApplyTransmogPacket.class, NetworkDirection.PLAY_TO_SERVER)
+                .encoder(ApplyTransmogPacket::encode)
+                .decoder(ApplyTransmogPacket::new)
+                .consumerMainThread(ApplyTransmogPacket::handle)
+                .add();
+
         INSTANCE.messageBuilder(TransmogSelectPacket.class, NetworkDirection.PLAY_TO_SERVER)
                 .encoder(TransmogSelectPacket::encode)
                 .decoder(TransmogSelectPacket::new)
                 .consumerMainThread(TransmogSelectPacket::handle)
                 .add();
 
-        INSTANCE.messageBuilder(TransmogItemPacket.class, NetworkDirection.PLAY_TO_SERVER)
-                .codec(TransmogItemPacket.CODEC) // Use StreamCodec correctly
-                .consumerMainThread(TransmogItemPacket::handle)
-                .add();
 
     }
+
 
     public static void sendToServer(Object msg) {
         INSTANCE.send(msg, PacketDistributor.SERVER.noArg());

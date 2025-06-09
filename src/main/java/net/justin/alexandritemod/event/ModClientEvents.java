@@ -1,9 +1,13 @@
 package net.justin.alexandritemod.event;
 
 import net.justin.alexandritemod.AlexandriteMod;
+import net.justin.alexandritemod.entity.client.LumberJackModel;
 import net.justin.alexandritemod.item.ModItems;
+import net.minecraft.client.resources.model.BlockStateModelLoader;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ComputeFovModifierEvent;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 

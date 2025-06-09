@@ -5,13 +5,11 @@ import net.justin.alexandritemod.block.ModBlocks;
 import net.justin.alexandritemod.block.entity.ModBlockEntities;
 import net.justin.alexandritemod.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.justin.alexandritemod.block.entity.renderer.TransmogTableBlockRenderer;
+import net.justin.alexandritemod.common.ModDataComponents;
 import net.justin.alexandritemod.common.ModTransmogs;
 import net.justin.alexandritemod.enchantment.ModEnchantmentEffects;
 import net.justin.alexandritemod.entity.ModEntities;
-import net.justin.alexandritemod.entity.client.BeaverRenderer;
-import net.justin.alexandritemod.entity.client.ChairRenderer;
-import net.justin.alexandritemod.entity.client.TomahawkProjectileRenderer;
-import net.justin.alexandritemod.entity.client.TriceratopsRenderer;
+import net.justin.alexandritemod.entity.client.*;
 import net.justin.alexandritemod.item.ModCreativeModeTabs;
 import net.justin.alexandritemod.item.ModItems;
 import net.justin.alexandritemod.network.PacketHandler;
@@ -25,6 +23,8 @@ import net.justin.alexandritemod.util.ModWoodTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
@@ -61,6 +61,7 @@ public class AlexandriteMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModDataComponents.register(modEventBus);
 
         ModSounds.register(modEventBus);
 
@@ -140,8 +141,17 @@ public class AlexandriteMod {
 
             ModItemProperties.addCustomItemProperties();
 
+            event.enqueueWork(() -> {
+                ItemProperties.register(ModItems.ALEXANDRITE_SWORD.get(),
+                        ResourceLocation.fromNamespaceAndPath(AlexandriteMod.MOD_ID, "custom_model"),
+                        (stack, level, entity, seed) ->
+                                stack.getOrDefault(ModDataComponents.CUSTOM_MODEL_INDEX.get(), -1.0f)
+                );
+            });
+
             EntityRenderers.register(ModEntities.TRICERATOPS.get(), TriceratopsRenderer::new);
             EntityRenderers.register(ModEntities.BEAVER.get(), BeaverRenderer::new);
+            EntityRenderers.register(ModEntities.LUMBER_JACK.get(), LumberJackRenderer::new);
             EntityRenderers.register(ModEntities.CHAIR.get(), ChairRenderer::new);
             EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
             MenuScreens.register(ModMenuTypes.GROWTH_CHAMBER_MENU.get(), GrowthChamberScreen::new);
@@ -154,5 +164,6 @@ public class AlexandriteMod {
             event.registerBlockEntityRenderer(ModBlockEntities.TRANSMOG_BE.get(), TransmogTableBlockRenderer::new);
 
         }
+
     }
 }

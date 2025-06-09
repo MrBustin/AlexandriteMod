@@ -34,6 +34,9 @@ public class ModItems {
     public static final RegistryObject<Item> BEAVER_SPAWN_EGG = ITEMS.register("beaver_spawn_egg",
             ()-> new ForgeSpawnEggItem(ModEntities.BEAVER, 10051392,3407872, new Item.Properties()));
 
+    public static final RegistryObject<Item> LUMBER_JACK_SPAWN_EGG = ITEMS.register("lumber_jack_spawn_egg",
+            ()-> new ForgeSpawnEggItem(ModEntities.LUMBER_JACK, 10051392,3407872, new Item.Properties()));
+
 
 
     //Tools
@@ -52,6 +55,11 @@ public class ModItems {
     public static final RegistryObject<Item> ALEXANDRITE_HOE = ITEMS.register("alexandrite_hoe",
             () -> new HoeItem(ModToolTiers.ALEXANDRITE, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.ALEXANDRITE, 0, -3.0f))));
+
+    public static final RegistryObject<Item> LUMBER_AXE = ITEMS.register("lumber_axe",
+            ()-> new AxeItem(ModToolTiers.ALEXANDRITE, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.ALEXANDRITE,6,-3.2f))));
+
 
     //Hammer
     public static final RegistryObject<Item> ALEXANDRITE_HAMMER = ITEMS.register("alexandrite_hammer",

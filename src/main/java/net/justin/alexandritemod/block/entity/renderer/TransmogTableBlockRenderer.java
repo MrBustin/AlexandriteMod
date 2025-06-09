@@ -27,8 +27,8 @@ public class TransmogTableBlockRenderer implements BlockEntityRenderer<TransmogT
                        MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
 
-        if (pBlockEntity.inventory != null) {
-            ItemStack stack = pBlockEntity.inventory.getStackInSlot(0);
+        if (pBlockEntity.getInventory() != null) {
+            ItemStack stack = pBlockEntity.getInventory().getStackInSlot(0);
 
             if (!stack.isEmpty()) {
                 pPoseStack.pushPose();

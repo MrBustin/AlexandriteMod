@@ -1,10 +1,7 @@
 package net.justin.alexandritemod.entity;
 
 import net.justin.alexandritemod.AlexandriteMod;
-import net.justin.alexandritemod.entity.custom.BeaverEntity;
-import net.justin.alexandritemod.entity.custom.ChairEntity;
-import net.justin.alexandritemod.entity.custom.TomahawkProjectileEntity;
-import net.justin.alexandritemod.entity.custom.TriceratopsEntity;
+import net.justin.alexandritemod.entity.custom.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,6 +20,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<BeaverEntity>> BEAVER =
             ENTITY_TYPE.register("beaver", () -> EntityType.Builder.of(BeaverEntity::new, MobCategory.CREATURE)
                     .sized(1f,1f).build("beaver"));
+
+    public static final RegistryObject<EntityType<LumberJackEntity>> LUMBER_JACK =
+            ENTITY_TYPE.register("lumber_jack", ()-> EntityType.Builder.of(LumberJackEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.95F).build("lumber_jack"));
 
     public static final RegistryObject<EntityType<ChairEntity>> CHAIR =
             ENTITY_TYPE.register("chair_entity", () -> EntityType.Builder.of(ChairEntity::new, MobCategory.MISC)
