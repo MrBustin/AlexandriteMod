@@ -1,0 +1,7 @@
+// 1.21	2025-03-21T20:00:18.7706938	Tags for minecraft:item mod id alexandritemod
+c1bd8534cdb7a7c4c0bb53b4837c64d3b3d435c8 data/alexandritemod/tags/item/crops.json
+bf1e33062f449ec4800b52865d859ea508fce3e9 data/alexandritemod/tags/item/transformable_items.json
+55478e792d6d137cc5e50f7fecfd7c5a02488e69 data/minecraft/tags/item/beacon_payment_items.json
+6b24e5b5ccb85ecdb1c311c99c265f093880d4b4 data/minecraft/tags/item/logs_that_burn.json
+d2cdc8a20592e0b3403b5be9b55961a768c0e289 data/minecraft/tags/item/planks.json
+fb5c45ba600e6a6f7b3ebd99b14f758df2a02754 data/minecraft/tags/item/trimmable_armor.json

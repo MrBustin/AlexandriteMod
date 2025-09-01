@@ -1,0 +1,148 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alexandritemod:item/alexandrite_sword"
+  },
+  "overrides": [
+    {
+      "predicate": { "alexandritemod:custom_model": 0.0 },
+      "model": "alexandritemod:item/transmogs/swords/alliumblade"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 1.0 },
+      "model": "alexandritemod:item/transmogs/swords/bamboo"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 2.0 },
+      "model": "alexandritemod:item/transmogs/swords/baseball_bat"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 3.0 },
+      "model": "alexandritemod:item/transmogs/swords/chainsword"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 4.0 },
+      "model": "alexandritemod:item/transmogs/swords/crystalblade"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 5.0 },
+      "model": "alexandritemod:item/transmogs/swords/crystaldoubleblade"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 6.0 },
+      "model": "alexandritemod:item/transmogs/swords/cutlass"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 7.0 },
+      "model": "alexandritemod:item/transmogs/swords/dark_blade"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 8.0 },
+      "model": "alexandritemod:item/transmogs/swords/deaths_door"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 9.0 },
+      "model": "alexandritemod:item/transmogs/swords/double_blade"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 10.0 },
+      "model": "alexandritemod:item/transmogs/swords/douwswords_swousky"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 11.0 },
+      "model": "alexandritemod:item/transmogs/swords/elite_skeleton_dagger"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 12.0 },
+      "model": "alexandritemod:item/transmogs/swords/gladius"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 13.0 },
+      "model": "alexandritemod:item/transmogs/swords/glorem_glipsum"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 14.0 },
+      "model": "alexandritemod:item/transmogs/swords/godsword"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 15.0 },
+      "model": "alexandritemod:item/transmogs/swords/honey_wand"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 16.0 },
+      "model": "alexandritemod:item/transmogs/swords/idonas_sword"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 17.0 },
+      "model": "alexandritemod:item/transmogs/swords/inflatedjustice"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 18.0 },
+      "model": "alexandritemod:item/transmogs/swords/kindled_blade"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 19.0 },
+      "model": "alexandritemod:item/transmogs/swords/moonshine"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 20.0 },
+      "model": "alexandritemod:item/transmogs/swords/nightfall"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 21.0 },
+      "model": "alexandritemod:item/transmogs/swords/plate_piercer"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 22.0 },
+      "model": "alexandritemod:item/transmogs/swords/red_katana"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 23.0 },
+      "model": "alexandritemod:item/transmogs/swords/refracted_blade"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 24.0 },
+      "model": "alexandritemod:item/transmogs/swords/ring_blade"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 25.0 },
+      "model": "alexandritemod:item/transmogs/swords/skallified_sword"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 26.0 },
+      "model": "alexandritemod:item/transmogs/swords/soul_sword"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 27.0 },
+      "model": "alexandritemod:item/transmogs/swords/soul_sword_blue"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 28.0 },
+      "model": "alexandritemod:item/transmogs/swords/soul_sword_green"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 29.0 },
+      "model": "alexandritemod:item/transmogs/swords/soulflame"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 30.0 },
+      "model": "alexandritemod:item/transmogs/swords/swaxe"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 31.0 },
+      "model": "alexandritemod:item/transmogs/swords/tarnished_blade"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 32.0 },
+      "model": "alexandritemod:item/transmogs/swords/tribal_blade"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 33.0 },
+      "model": "alexandritemod:item/transmogs/swords/velaras_greatsword"
+    },
+    {
+      "predicate": { "alexandritemod:custom_model": 34.0 },
+      "model": "alexandritemod:item/transmogs/swords/wendarrs_greatsword"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:plains",
+  "features": "alexandritemod:walnut_placed",
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "alexandrite",
+  "key": {
+    "#": {
+      "item": "alexandritemod:alexandrite"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "alexandritemod:alexandrite_stairs"
+  }
+}

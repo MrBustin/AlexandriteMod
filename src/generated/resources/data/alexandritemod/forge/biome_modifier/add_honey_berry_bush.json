@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:taiga",
+  "features": "alexandritemod:honey_berry_bush_placed",
+  "step": "vegetal_decoration"
+}

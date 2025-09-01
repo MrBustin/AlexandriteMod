@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "walnut",
+  "ingredients": [
+    {
+      "item": "alexandritemod:walnut_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "alexandritemod:walnut_button"
+  }
+}

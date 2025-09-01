@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "alexandritemod:alexandrite"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "AA ",
+    "AS ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "alexandritemod:alexandrite_axe"
+  }
+}

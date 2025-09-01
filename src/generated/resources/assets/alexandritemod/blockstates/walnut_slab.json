@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "alexandritemod:block/walnut_slab"
+    },
+    "type=double": {
+      "model": "alexandritemod:block/walnut_planks"
+    },
+    "type=top": {
+      "model": "alexandritemod:block/walnut_slab_top"
+    }
+  }
+}

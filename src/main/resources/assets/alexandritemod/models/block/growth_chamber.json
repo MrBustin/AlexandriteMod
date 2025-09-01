@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "alexandritemod:block/growth_chamber",
+    "side": "alexandritemod:block/growth_chamber",
+    "top": "alexandritemod:block/growth_chamber_top",
+    "bottom": "minecraft:block/blast_furnace_top"
+  }
+}

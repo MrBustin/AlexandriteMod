@@ -1,0 +1,11 @@
+// 1.21	2025-03-21T19:59:19.2992244	Tags for minecraft:block mod id alexandritemod
+3e47bab1e49325ffe7f40efdbb701bc075d9d3e7 data/alexandritemod/tags/block/needs_alexandrite_tool.json
+a6a415dad187a78b29439e3adb9d4e32a9b969d7 data/minecraft/tags/block/beacon_base_blocks.json
+d625be4b2f67f8ae846f292138a5d3a55595c9c9 data/minecraft/tags/block/fences.json
+1c3376cb5c7ee3afdcf8c26fc7b6f686f00fc20d data/minecraft/tags/block/fence_gates.json
+6b24e5b5ccb85ecdb1c311c99c265f093880d4b4 data/minecraft/tags/block/logs_that_burn.json
+51fff2cd998da9aaae4db00c6cd12ece0698198e data/minecraft/tags/block/mineable/axe.json
+af90397d1045d60e387a7c8fe96e025f8f2298e2 data/minecraft/tags/block/mineable/pickaxe.json
+7815720731dbdc755a22835f19034808714accb0 data/minecraft/tags/block/needs_iron_tool.json
+78480083588bcd7167750684319adbb0dfd123f1 data/minecraft/tags/block/walls.json
+1602af17e426c302d1388f1a3e87c81093cfcef9 data/minecraft/tags/block/wooden_fences.json

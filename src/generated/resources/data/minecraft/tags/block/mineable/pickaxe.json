@@ -1,0 +1,22 @@
+{
+  "values": [
+    "alexandritemod:alexandrite_block",
+    "alexandritemod:raw_alexandrite_block",
+    "alexandritemod:alexandrite_ore",
+    "alexandritemod:alexandrite_deepslate_ore",
+    "alexandritemod:alexandrite_nether_ore",
+    "alexandritemod:magic_block",
+    "alexandritemod:alexandrite_stairs",
+    "alexandritemod:alexandrite_slab",
+    "alexandritemod:alexandrite_button",
+    "alexandritemod:alexandrite_fence",
+    "alexandritemod:alexandrite_wall",
+    "alexandritemod:alexandrite_fence_gate",
+    "alexandritemod:alexandrite_door",
+    "alexandritemod:alexandrite_trapdoor",
+    "alexandritemod:pedestal",
+    "alexandritemod:growth_chamber",
+    "alexandritemod:chamber_frame",
+    "alexandritemod:alexandrite_furnace"
+  ]
+}

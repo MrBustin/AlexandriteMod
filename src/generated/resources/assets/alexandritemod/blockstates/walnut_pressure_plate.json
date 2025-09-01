@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "alexandritemod:block/walnut_pressure_plate"
+    },
+    "powered=true": {
+      "model": "alexandritemod:block/walnut_pressure_plate_down"
+    }
+  }
+}

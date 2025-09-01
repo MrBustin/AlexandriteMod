@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "alexandritemod:block/walnut_sapling"
+  }
+}

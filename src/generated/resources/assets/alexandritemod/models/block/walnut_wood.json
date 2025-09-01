@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "alexandritemod:block/walnut_log",
+    "side": "alexandritemod:block/walnut_log"
+  }
+}
